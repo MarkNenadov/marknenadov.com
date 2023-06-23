@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { PublicationCredit } from '../Models/PublicationCredit';
-import Card from "./Card";
+import Card from "./base/GenericCard";
 import { useState } from 'react';
 import publicationCredits from '../Data/publication-credits.json';
 import TechnicalReviewsModal from './modals/TechnicalReviewsModal';
