@@ -1,7 +1,22 @@
 [
     {
-        "name": "blah",
-        "description": "this that and the other",
-        "url": "https://blah.com/"  
+        "name": "KPasswordless",
+        "description": "A Kotlin client for passwordless.dev",
+        "url": "https://github.com/MarkNenadov/KPasswordless"  
+    },
+    {
+        "name": "websocket_proxypy",
+        "description": "A simple Python WebSocket Proxy Server",
+        "url": "https://github.com/MarkNenadov/websocket_proxpy"  
+    },
+    {
+        "name": "kYNAB",
+        "description": "A simple Kotlin interface to YNAB (You Need A Budget)",
+        "url": "https://github.com/MarkNenadov/kYNAB"  
+    },
+    {
+        "name": "uciti",
+        "description": "A simple React Serbian/German -> English flashcard app",
+        "url": "https://github.com/MarkNenadov/uciti"  
     }
 ]
