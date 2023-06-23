@@ -1,4 +1,4 @@
-==marknenadov.com==
+**marknenadov.com**
 
 This site was built with React, Next.js, Typescript, Tailwind, VS Code, and Vercel
 
