@@ -55,10 +55,10 @@ export default function Home() {
           <Card title="Enthusiastic Amatuer Naturalist">
             <div>
               <p className="mb-4">
-                I'm an enthusiastic citizen scientist contributing huge amounts of data about the plants and animals around me. I actively contribute to <a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a>,  <a className="underline text-blue-900" href="https://bugguide.net">BugGuide.net</a>, and  <a className="underline text-blue-900" href="https://ebird.org">eBird</a>.
+                I'm an enthusiastic contributor of data to the citizen science community. I actively contribute to <a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a>,  <a className="underline text-blue-900" href="https://bugguide.net">BugGuide.net</a>, and  <a className="underline text-blue-900" href="https://ebird.org">eBird</a>.
               </p> 
               <p className="mb-4">
-                I've recently posted my 26,000 iNaturalist observation. I'm particularly active in Essex County, Ontario, where I have nearly 3X more observations than the next highest observer.
+                I've recently posted my 26,000 iNaturalist observation. In Essex County, Ontario I have nearly 3X more observations than the next highest observer.
               </p>
             </div>
           </Card>
