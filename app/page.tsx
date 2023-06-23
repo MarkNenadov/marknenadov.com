@@ -9,9 +9,11 @@ import { useState } from 'react';
 import openSourceProjects from './Data/open-source-projects.json';
 import OpenSourceProjectsModal from './Components/modals/OpenSourceProjectsModal';
 import GenericButton from './Components/base/GenericButton';
+import CitizenScienceProjectsModal from './Components/modals/CitizenScienceProjectsModal';
 
 export default function Home() {
   const [isSelectedProjectsOpen, setIsSeletedProjectsOpen] = useState( false );
+  const [isCitizenScienceProjectsOpen, setIsCitizenScienceProjectsOpen] = useState( false );
 
   return (
     <div className="min-h-[100vh] max-w-7xl m-3">
@@ -55,11 +57,25 @@ export default function Home() {
           <Card title="Enthusiastic Amatuer Naturalist">
             <div>
               <p className="mb-4">
-                I'm an enthusiastic contributor of data to the citizen science community. I actively contribute to <a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a>,  <a className="underline text-blue-900" href="https://bugguide.net">BugGuide.net</a>, and  <a className="underline text-blue-900" href="https://ebird.org">eBird</a>.
+                I'm an enthusiastic contributor of data to the citizen science community. I'm more or less interested in every living creature, but over the years, birds and moths in particular have captured my imagination.
               </p> 
               <p className="mb-4">
                 I've recently posted my 26,000 iNaturalist observation. In Essex County, Ontario I have nearly 3X more observations than the next highest observer.
               </p>
+
+              <GenericButton 
+                        text="💡 Selected Citizen Science Projects"
+                        shortText="Projects"
+                        onClick={ () => setIsCitizenScienceProjectsOpen( !isCitizenScienceProjectsOpen ) } 
+                    />
+
+                { isCitizenScienceProjectsOpen && (
+                        <CitizenScienceProjectsModal 
+                          setIsSeletedProjectsOpen={ setIsCitizenScienceProjectsOpen } 
+                        />
+                ) }
+
+              {/* I actively contribute to <a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a>,  <a className="underline text-blue-900" href="https://bugguide.net">BugGuide.net</a>, and  <a className="underline text-blue-900" href="https://ebird.org">eBird</a> */}
             </div>
           </Card>
           <Card title="My 'Bug Year'">
@@ -75,6 +91,9 @@ export default function Home() {
               </p>
             </div>
           </Card>
+      </div>
+      <div className="w-full border border-1 border-black p-2 text-center">
+        This site was built with React, Next.js, Typescript, Tailwind, VS Code, and Vercel. <a className="underline text-blue-900" href="https://github.com/MarkNenadov/marknenadov.com">Source code</a>. 
       </div>
     </div>
   </div>
