@@ -11,7 +11,7 @@ export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}:
             title="Selected Citizen Science Projects"
             closeHandler={ () => setIsSeletedProjectsOpen( false )  }
         >
-            <p>I'm a regular or semi-regular contributor to each of these efforrs:</p>
+            <p>I&apos;m a regular or semi-regular contributor to each of these efforrs:</p>
             <ul className="list-disc list-inside">
                 <li><a className="underline text-blue-900" href="https://ebird.org">eBird</a></li>
                 <li><a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a></li>
