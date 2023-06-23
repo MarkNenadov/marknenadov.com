@@ -1,0 +1,25 @@
+import { PublicationCredit } from "../../Models/PublicationCredit";
+import GenericButton from "./GenericButton";
+
+interface GenericModalProps {
+    title: string,
+    children: any,
+    closeHandler: () => void
+}
+
+export default function GenericModal( {title, children, closeHandler}: GenericModalProps) {
+    return (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+            <div className="bg-white p-6 rounded shadow-md border border-1 border-black text-center">
+                <h2 className="text-xl font-semibold mb-4">{ title }</h2>
+                <div className="text-left">
+                    { children }
+                </div>
+                <GenericButton
+                    text="Close"
+                    onClick={ closeHandler }
+                />
+            </div>
+        </div>
+    );
+}
