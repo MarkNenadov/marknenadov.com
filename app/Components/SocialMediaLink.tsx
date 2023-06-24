@@ -15,6 +15,7 @@ export default function SocialMediaLink( {logoSource, title, href}: SocialMediaL
               width="24" 
               height="24" 
               alt={ title }
+              title={ title }
           />
           </a>
       </div>

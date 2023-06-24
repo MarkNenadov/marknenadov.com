@@ -53,7 +53,7 @@ export default function Home() {
           <PublicationCreditListing />
         </div>
       
-        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto max-h-[272px]">
+        <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto">
           <Card title="Enthusiastic Amatuer Naturalist">
             <div>
               <p className="mb-4">
@@ -74,8 +74,6 @@ export default function Home() {
                           setIsSeletedProjectsOpen={ setIsCitizenScienceProjectsOpen } 
                         />
                 ) }
-
-              {/* I actively contribute to <a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a>,  <a className="underline text-blue-900" href="https://bugguide.net">BugGuide.net</a>, and  <a className="underline text-blue-900" href="https://ebird.org">eBird</a> */}
             </div>
           </Card>
           <Card title="My 'Bug Year'">

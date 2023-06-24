@@ -16,7 +16,7 @@ export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}:
                 <li><a className="underline text-blue-900" href="https://ebird.org">eBird</a></li>
                 <li><a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a></li>
                 <li><a className="underline text-blue-900" href="https://bugguide.net">BugGuide.net</a></li>
-                <li>Local Christimas Bird Counts (ie. Point Pelee NP, and Holiday Beach CA)</li>
+                <li>Christimas Bird Counts (ie. Point Pelee NP and Holiday Beach CA)</li>
             </ul>
         </GenericModal>
     );
