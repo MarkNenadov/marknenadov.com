@@ -3,24 +3,28 @@
         "title": "API Design Patterns",
         "publisher": "Manning",
         "date": "2021",
-        "type": "Technical Reviewer"  
+        "type": "Technical Reviewer",
+        "url": "https://www.goodreads.com/book/show/51192053-api-design-patterns?from_search=true&from_srp=true&qid=GjxTJw6IIZ&rank=1"  
     },
     {
         "title": "Unit Testing Principles, Practices & Patterns",
         "publisher": "Manning",
         "date": "2020",
-        "type": "Technical Reviewer"  
+        "type": "Technical Reviewer",
+        "url": "https://www.goodreads.com/book/show/48927138-unit-testing?ac=1&from_search=true&qid=sFoCVfmETC&rank=1"    
     },
     {
         "title": "Pro JavaScript Techniques",
         "publisher": "Apress",
         "date": "2015",
-        "type": "Technical Reviewer"  
+        "type": "Technical Reviewer",
+        "url": "https://www.goodreads.com/book/show/661336.Pro_JavaScript_Techniques?from_search=true&from_srp=true&qid=NtMQeHOpn1&rank=1"    
     },
     {
         "title": "XML and PHP",
         "publisher": "New Riders",
         "date": "2002",
-        "type": "Technical Reviewer"  
+        "type": "Technical Reviewer",
+        "url": "https://www.goodreads.com/book/show/221638.Xml_and_Php?from_search=true&from_srp=true&qid=EdXicXywPG&rank=1"  
     }         
 ]

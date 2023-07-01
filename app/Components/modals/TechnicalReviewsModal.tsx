@@ -15,7 +15,9 @@ export default function TechnicalReviewsModal( {publicationCredits, setIsSelecte
             <ul className="list-disc list-inside">
                 {            
                     publicationCredits.filter( p => p.type === "Technical Reviewer" ).map( (publicationCredit) => 
-                        <li key="1">{publicationCredit.title} ({publicationCredit.publisher}) - {publicationCredit.date}</li>
+                        <li key="1">
+                            <a className="underline text-blue-900" href={publicationCredit.url}>{publicationCredit.title}</a> ({publicationCredit.publisher}) - {publicationCredit.date}
+                        </li>
                     )
                 }
             </ul>
