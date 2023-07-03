@@ -58,10 +58,10 @@ export default function Home() {
           <Card title="Enthusiastic Amatuer Naturalist">
             <div>
               <p className="mb-4">
-                I'm an enthusiastic contributor of data to the citizen science community. I'm more or less interested in every living creature, but over the years, birds and moths in particular have captured my imagination.
+                I'm an enthusiastic data gatherer in the citizen science community. I'm more or less interested in every living creature, but over the years, birds and moths in particular have captured my imagination.
               </p> 
               <p className="mb-4">
-                I've recently posted my 26,000 iNaturalist observation. In Essex County, Ontario I have nearly 3X more observations than the next highest observer.
+                I've recently posted my 26,000th iNaturalist observation. In Essex County, Ontario I have nearly 3X more observations than the next highest observer.
               </p>
 
               <GenericButton 

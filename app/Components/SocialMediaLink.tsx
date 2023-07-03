@@ -8,7 +8,7 @@ interface SocialMediaLinkProps {
 
 export default function SocialMediaLink( {logoSource, title, href}: SocialMediaLinkProps) {
     return (
-        <div>
+        <div className="hover:invert">
         <a href={ href }>
           <Image 
               src={ logoSource }
