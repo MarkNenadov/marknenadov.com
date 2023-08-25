@@ -1,9 +1,8 @@
-import Image from 'next/image';
-import { PublicationCredit } from '../../Models/PublicationCredit';
+import { ReactNode } from 'react';
 
 interface CardProps {
     title: string,
-    children: any
+    children: ReactNode
 }
 
 export default function Card( {title, children}: CardProps) {

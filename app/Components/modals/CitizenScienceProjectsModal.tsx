@@ -2,7 +2,7 @@ import { PublicationCredit } from "../../Models/PublicationCredit";
 import GenericModal from "../base/GenericModal";
 
 interface CitizenScienceProjectsModalProps {
-    setIsSeletedProjectsOpen: any
+    setIsSeletedProjectsOpen: (value: boolean) => void;
 }
 
 export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}: CitizenScienceProjectsModalProps) {

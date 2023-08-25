@@ -3,14 +3,14 @@ import GenericModal from "../base/GenericModal";
 
 interface TechnicalReviewsModalProps {
     publicationCredits: PublicationCredit[],
-    setIsSelectedExamplesOpen: any
+    setIsReviewsModalOpen: (value: boolean) => void;
 }
 
-export default function TechnicalReviewsModal( {publicationCredits, setIsSelectedExamplesOpen}: TechnicalReviewsModalProps) {
+export default function TechnicalReviewsModal( {publicationCredits, setIsReviewsModalOpen}: TechnicalReviewsModalProps) {
     return (
         <GenericModal 
             title="Selected Technical Review Credits"
-            closeHandler={ () => setIsSelectedExamplesOpen( false )  }
+            closeHandler={ () => setIsReviewsModalOpen( false )  }
         >
             <ul className="list-disc list-inside">
                 {            
