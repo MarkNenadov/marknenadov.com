@@ -13,6 +13,7 @@ export default function SocialMediaLink( {logoSource, title, href}: SocialMediaL
             href={ href }
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={ `${title} profile` }
         >
           <Image 
               src={ logoSource }

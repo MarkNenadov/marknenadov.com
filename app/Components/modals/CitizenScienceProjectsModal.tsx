@@ -1,9 +1,21 @@
-import { PublicationCredit } from "../../Models/PublicationCredit";
+import React from "react";
 import GenericModal from "../base/GenericModal";
 
 interface CitizenScienceProjectsModalProps {
     setIsSeletedProjectsOpen: (value: boolean) => void;
 }
+
+interface Project {
+    name: string;
+    url?: string;
+  }
+  
+const PROJECTS : Project[] = [
+    { name: "eBird", url: "https://ebird.org" },
+    { name: "iNaturalist", url: "https://inaturalist.org" },
+    { name: "BugGuide.net", url: "https://bugguide.net" },
+    { name: "Christmas Bird Counts (ie. Point Pelee NP and Holiday "}
+];
 
 export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}: CitizenScienceProjectsModalProps) {
     return (
@@ -13,10 +25,11 @@ export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}:
         >
             <p>I&apos;m a regular or semi-regular contributor to each of these efforts:</p>
             <ul className="list-disc list-inside">
-                <li><a className="underline text-blue-900" href="https://ebird.org">eBird</a></li>
-                <li><a className="underline text-blue-900" href="https://inaturalist.org">iNaturalist</a></li>
-                <li><a className="underline text-blue-900" href="https://bugguide.net">BugGuide.net</a></li>
-                <li>Christimas Bird Counts (ie. Point Pelee NP and Holiday Beach CA)</li>
+                { 
+                    PROJECTS.map( ( {name, url}) => {
+                        return !!url ? <li key={name} ><a className="underline text-blue-900" href={url}>{ name }</a></li> : <li>{name}</li>
+                    })
+                }
             </ul>
         </GenericModal>
     );

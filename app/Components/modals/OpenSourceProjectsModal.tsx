@@ -14,8 +14,8 @@ export default function OpenSourceProjectsModal( {openSourceProjects, setIsSelet
         >
             <ul className="list-disc list-inside">
                 {            
-                    openSourceProjects.map( (project) => 
-                        <li key="1"><a className="underline text-blue-900" href={ project.url }>{project.name}</a> - {project.description}</li>
+                    openSourceProjects.map( ( {name, url, description} ) => 
+                        <li key={name}><a className="underline text-blue-900" href={ url }>{name}</a> - {description}</li>
                     )
                 }
             </ul>

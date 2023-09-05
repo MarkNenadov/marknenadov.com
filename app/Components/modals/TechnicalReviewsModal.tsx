@@ -14,9 +14,15 @@ export default function TechnicalReviewsModal( {publicationCredits, setIsReviews
         >
             <ul className="list-disc list-inside">
                 {            
-                    publicationCredits.filter( p => p.type === "Technical Reviewer" ).map( (publicationCredit) => 
-                        <li key="1">
-                            <a className="underline text-blue-900" href={publicationCredit.url}>{publicationCredit.title}</a> ({publicationCredit.publisher}) - {publicationCredit.date}
+                    publicationCredits.filter( p => p.type === "Technical Reviewer" ).map( ({title, url, publisher, date }) => 
+                        <li key={title}>
+                            <a 
+                                className="underline text-blue-900" 
+                                href={url}
+                                aria-label={ `Link to ${url}` }
+                            >
+                                {title}
+                            </a> ({publisher}) - {date}
                         </li>
                     )
                 }
