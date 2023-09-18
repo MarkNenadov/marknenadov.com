@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "eslint-config-next": "13.4.19",
-    "@types/node": "20.6.0",
-    "@types/react": "18.2.21",
+    "@types/node": "20.6.2",
+    "@types/react": "18.2.22",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3"
