@@ -4,6 +4,7 @@ import Card from './Components/base/GenericCard';
 import PublicationCreditListing from './Components/PublicationCreditListing';
 import SocialMediaLinks from './Components/SocialMediaLinks';
 import markImage from '../public/mark.jpeg';
+import markInterestsImage from '../public/mark-interests.webp';
 import Image from 'next/image';
 import { useState } from 'react';
 import openSourceProjects from './Data/open-source-projects.json';
@@ -26,6 +27,7 @@ export default function Home() {
         
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto items-center">
           <Image src={ markImage } alt="Mark Photo" className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]" />
+          <Image src={ markInterestsImage } alt="Mark Interests" className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]" />
           <Card title="Technical Leader">
             <div>
               <p className="mb-4">
