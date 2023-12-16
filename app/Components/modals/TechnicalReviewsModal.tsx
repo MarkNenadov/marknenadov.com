@@ -14,7 +14,9 @@ export default function TechnicalReviewsModal( {publicationCredits, setIsReviews
         >
             <ul className="list-disc list-inside">
                 {            
-                    publicationCredits.filter( p => p.type === "Technical Reviewer" ).map( ({title, url, publisher, date }) => 
+                    publicationCredits.filter( 
+                        p => p.type === "Technical Reviewer" ).map( ({title, url, publisher, date }
+                    ) => 
                         <li key={title}>
                             <a 
                                 className="underline text-blue-900" 
