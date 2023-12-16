@@ -26,8 +26,18 @@ export default function Home() {
         <SocialMediaLinks />
         
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto items-center">
-          <Image src={ markImage } alt="Mark Photo" className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]" />
-          <Image src={ markInterestsImage } alt="Mark Interests" className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]" />
+          <Image 
+            src={ markImage } 
+            alt="Mark Photo" 
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]" 
+           />
+
+          <Image 
+            src={ markInterestsImage } 
+            alt="Mark Interests" 
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]"
+          />
+
           <Card title="Technical Leader">
             <div>
               <p className="mb-4">
@@ -87,7 +97,7 @@ export default function Home() {
                 CBC Afternoon Drive host Allison Devereaux <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">interviewed me</a> about this effort.
               </p>
               <p className="mb-4">
-                You can follow my progress <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">here</a>.
+                You can follow my progress <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">in this inaturalist group</a>.
               </p>
             </div>
           </Card>
