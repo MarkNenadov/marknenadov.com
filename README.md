@@ -25,5 +25,6 @@ SEO: 100
 
 ## TODO
 
+* Uneven left/right margin in mobile
 * At 1200px width, the "Technical Reviews" button flows right out of Writing/Reviewer section
 * Add link to quotes site
