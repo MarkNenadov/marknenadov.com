@@ -11,7 +11,7 @@ import openSourceProjects from './Data/open-source-projects.json';
 import OpenSourceProjectsModal from './Components/modals/OpenSourceProjectsModal';
 import GenericButton from './Components/base/GenericButton';
 import CitizenScienceProjectsModal from './Components/modals/CitizenScienceProjectsModal';
-import { BugYearCard } from './Components/BugYearCard';
+import { BottomRightCard } from './Components/BottomRightCard';
 import { Footer } from './Components/Footer';
 
 export default function Home() {
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
           </Card>
 
-          <BugYearCard />
+          <BottomRightCard />
       </div>
 
       <Footer />
