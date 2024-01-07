@@ -21,7 +21,7 @@ export default function Home() {
   return (
 
 <div className="min-h-[100vh] max-w-7xl md:m-3">
-      <div className={"flex flex-col space-y-3 p-4  md:m-4 w-full items-center"}>
+      <div className={"flex flex-col space-y-3 p-4 md:m-4 w-full items-center"}>
         <div className="text-6xl text-center">Mark Nenadov</div>
         <div>Ever curious, ever learning.</div>
 
