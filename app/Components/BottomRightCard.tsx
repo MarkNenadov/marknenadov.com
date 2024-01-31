@@ -12,7 +12,7 @@ export const BottomRightCard = () => {
           </div>
 
           <p className="mb-4">
-              In 2023, I documented 635 research-grade iNaturalist Arthropod species in Essex Coujnty, Ontario.
+              In 2023, I documented 639 research-grade iNaturalist Arthropod species in Essex Coujnty, Ontario.
           </p>
           <p className="mb-4">
               CBC Afternoon Drive host Allison Devereaux <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">interviewed me</a> about this effort.
