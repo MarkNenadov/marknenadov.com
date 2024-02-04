@@ -25,4 +25,15 @@
             expect(genericModalCloseButton).toBeInTheDocument()
         })
 
+        it('close button Works', () => {
+            const handler = jest.fn();
+            render(<GenericModal  title="my-modal" closeHandler={handler}><div>Hey</div></GenericModal>)
+        
+            const closeButton = screen.getByTestId("close-button")
+    
+            fireEvent.click( closeButton );
+        
+            expect(handler).toHaveBeenCalled();
+        })
+    
     })
