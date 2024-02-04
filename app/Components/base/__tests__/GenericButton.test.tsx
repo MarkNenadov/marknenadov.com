@@ -37,7 +37,7 @@
         
             const smallSpan = screen.getByTestId("small-text-span")        
             expect(smallSpan).toBeInTheDocument()
-            expect(smallSpan).toHaveTextContent( "short text" )
+            expect(smallSpan).toHaveTextContent( "short textz" )
 
             const largeSpan = screen.getByTestId("large-text-span")        
             expect(largeSpan).toBeInTheDocument()
