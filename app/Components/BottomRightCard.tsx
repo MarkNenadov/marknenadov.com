@@ -16,7 +16,7 @@ export const BottomRightCard = () => {
           </p>
           <p className="mb-4">
               CBC Afternoon Drive host Allison Devereaux <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">interviewed me</a> about this effort.
-              You can view the data I gathered <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">in this inaturalist group</a>.
+              You can view the data I gatheredz <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">in this inaturalist group</a>.
           </p>
         </div>
       </Card>
