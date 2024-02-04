@@ -1,20 +1,22 @@
 interface GenericButtonProps {
     text: string,
     shortText?: string,
-    onClick: () => void
+    onClick: () => void,
+    dataTestId?: string
 }
 
-export default function GenericButton( {text, shortText, onClick}: GenericButtonProps) {
+export default function GenericButton( {text, shortText, onClick, dataTestId}: GenericButtonProps) {
     return (
         <button
             type="button"
             className="bg-white hover:bg-gray-200 font-semibold py-2 px-4 rounded mt-4  border border-1 border-black"
             onClick={ onClick }
+            data-testid={dataTestId || "generic-button"}
         >
-            <span className="hidden lg:block">
+            <span className="hidden lg:block" data-testid="large-text-span">
                 { text }
             </span>
-            <span className="block lg:hidden">
+            <span className="block lg:hidden" data-testid="small-text-span">
                 { !!shortText ? shortText : text }
             </span>
         </button>
