@@ -22,6 +22,7 @@ export default function PublicationCreditListing() {
                 text="💡 Technical Reviews"
                 shortText="Tech Reviews"
                 onClick={ () => setIsReviewsModalOpen( !isReviewsModalOpen ) } 
+                dataTestId='technical-reviews-button'
             />
 
             { isReviewsModalOpen && (

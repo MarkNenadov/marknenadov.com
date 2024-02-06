@@ -10,6 +10,7 @@ export default function TechnicalReviewsModal( {publicationCredits, setIsReviews
     return (
         <GenericModal 
             title="Selected Technical Review Credits"
+            dataTestId="technical-review-modal"
             closeHandler={ () => setIsReviewsModalOpen( false )  }
         >
             <ul className="list-disc list-inside">

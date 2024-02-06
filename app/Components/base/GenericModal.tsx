@@ -4,15 +4,16 @@ import GenericButton from "./GenericButton";
 interface GenericModalProps {
     title: string,
     children: any,
-    closeHandler: () => void
+    closeHandler: () => void,
+    dataTestId?: string
 }
 
-export default function GenericModal( {title, children, closeHandler}: GenericModalProps) {
+export default function GenericModal( {title, children, dataTestId, closeHandler}: GenericModalProps) {
     return (
         <div 
             className="fixed inset-0 flex items-center justify-center z-50"
             aria-labelledby={`modal-title-${title}`}
-            data-testid={"generic-modal"}
+            data-testid={ dataTestId || "generic-modal"}
             >
         <div 
             className="bg-white p-6 rounded shadow-md border border-1 border-black text-center max-w-[90%] sm:max-w-[80%] md:max-w-[60%] lg:max-w-[50%]"
