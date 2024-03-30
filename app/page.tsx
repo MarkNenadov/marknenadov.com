@@ -74,7 +74,7 @@ export default function Home() {
                 I'm an enthusiastic data gatherer in the citizen science community. I'm more or less interested in every living creature, but over the years, birds and moths in particular have captured my imagination.
               </p> 
               <p className="mb-4">
-                I've recently posted my 26,000th iNaturalist observation. In Essex County, Ontario I have nearly 3X more observations than the next highest observer.
+                I've recently posted my 29,000th iNaturalist observation. In Essex County, Ontario I have nearly 3X more observations than the next highest observer.
               </p>
 
               <GenericButton 
