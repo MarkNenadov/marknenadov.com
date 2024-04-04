@@ -14,7 +14,7 @@ const PROJECTS : Project[] = [
     { name: "eBird", url: "https://ebird.org/ebird/profile/MzE3NzQ1/world" },
     { name: "iNaturalist", url: "https://inaturalist.org" },
     { name: "BugGuide.net", url: "https://bugguide.net" },
-    { name: "Christmas Bird Counts (ie. Point Pelee NP and Holiday "}
+    { name: "Christmas Bird Counts (ie. Point Pelee NP and Holiday)"}
 ];
 
 export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}: CitizenScienceProjectsModalProps) {
@@ -27,7 +27,10 @@ export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}:
             <ul className="list-disc list-inside">
                 { 
                     PROJECTS.map( ( {name, url}) => {
-                        return !!url ? <li key={name} ><a className="underline text-blue-900" href={url}>{ name }</a></li> : <li>{name}</li>
+                        return !!url ? 
+                                <li key={name} ><a className="underline text-blue-900" href={url}>{ name }</a></li> 
+                            : 
+                                <li>{name}</li>
                     })
                 }
             </ul>
