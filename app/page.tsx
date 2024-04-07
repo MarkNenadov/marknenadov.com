@@ -71,10 +71,10 @@ export default function Home() {
           <Card title="Enthusiastic Amatuer Naturalist">
             <div>
               <p className="mb-4">
-                I'm an enthusiastic data gatherer in the citizen science community. I'm more or less interested in every living creature, but over the years, birds and moths in particular have captured my imagination.
+                I'm more or less interested in every living creature, but over the years birds, and moths have particularly caught my imagination. I earnestly collect data for various citizens cience projects, such as iNaturalist (I've recently posted my 29,000th observation).
               </p> 
               <p className="mb-4">
-                I've recently posted my 29,000th iNaturalist observation. In Essex County, Ontario I have nearly 3X more observations than the next highest observer.
+                In 2023, I documented 661 research-grade iNaturalist Arthropod species in Essex County, Ontario.  Check out the <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">CBC radio interview</a> and the <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">data</a> I gathered.
               </p>
 
               <GenericButton 

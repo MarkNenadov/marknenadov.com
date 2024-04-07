@@ -8,15 +8,12 @@ export const BottomRightCard = () => {
             I&apos;m  an avid reader and you can find me on <a className="underline text-blue-900" href="https://www.goodreads.com/user/show/4015564-mark-nenadov">Goodreads</a>.  I&apos;m also collected a number of <a className="underline text-blue-900" href="https://quotes.marknenadov.com">quotes from my reading</a>.
           </p>
           <div className="font-bold">
-            My &quot;Bug Year&quot;
+           Photography
           </div>
 
           <p className="mb-4">
-              In 2023, I documented 659 research-grade iNaturalist Arthropod species in Essex Coujnty, Ontario.
-          </p>
-          <p className="mb-4">
-              CBC Afternoon Drive host Allison Devereaux <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">interviewed me</a> about this effort.
-              You can view the data I gathered <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">in this inaturalist group</a>.
+            My wildlife photography has been used by various sources, such as <a className="underline text-blue-900" href="https://www.smithsonianmag.com/smart-news/can-snakes-recognize-themselves-one-species-has-passed-a-modified-mirror-test-based-on-smell-180984088/">Smithsonian Magazine</a>, <a className="underline text-blue-900" href="https://ontarionature.org/flying-northwards-again-blog/">Ontario Nature</a>, <a className="underline text-blue-900" href="https://dnr.maryland.gov/education/Documents/MD-Herps-2021-Envirothon.pdf">Maryland DNR</a>, and <a className="underline text-blue-900" href="https://www.fishwildlife.org/application/files/3317/1052/2834/2023-AFWA-AnnualReport-v01F.pdf">Association of Fish & Wildlife Agencies</a>,
+                        
           </p>
         </div>
       </Card>
