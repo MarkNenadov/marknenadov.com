@@ -9,14 +9,13 @@ import Image from 'next/image';
 import { useState } from 'react';
 import openSourceProjects from './Data/open-source-projects.json';
 import OpenSourceProjectsModal from './Components/modals/OpenSourceProjectsModal';
+import { AmateurNaturalistCard } from './Components/AmateurNaturalistCard';
 import GenericButton from './Components/base/GenericButton';
-import CitizenScienceProjectsModal from './Components/modals/CitizenScienceProjectsModal';
 import { BottomRightCard } from './Components/BottomRightCard';
 import { Footer } from './Components/Footer';
 
 export default function Home() {
   const [isSelectedProjectsOpen, setIsSeletedProjectsOpen] = useState( false );
-  const [isCitizenScienceProjectsOpen, setIsCitizenScienceProjectsOpen] = useState( false );
 
   return (
 
@@ -68,29 +67,7 @@ export default function Home() {
         </div>
       
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto">
-          <Card title="Enthusiastic Amatuer Naturalist">
-            <div>
-              <p className="mb-4">
-                I'm more or less interested in every living creature, but over the years birds, and moths have particularly caught my imagination. I earnestly collect data for various citizens cience projects, such as iNaturalist (I've recently posted my 29,000th observation).
-              </p> 
-              <p className="mb-4">
-                In 2023, I documented 668 research-grade iNaturalist Arthropod species in Essex County, Ontario.  Check out the <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">CBC radio interview</a> and the <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">data</a> I gathered.
-              </p>
-
-              <GenericButton 
-                text="💡 Selected Citizen Science Projects"
-                shortText="Projects"
-                onClick={ () => setIsCitizenScienceProjectsOpen( !isCitizenScienceProjectsOpen ) } 
-              />
-
-                { isCitizenScienceProjectsOpen && (
-                  <CitizenScienceProjectsModal 
-                    setIsSeletedProjectsOpen={ setIsCitizenScienceProjectsOpen } 
-                  />
-                ) }
-            </div>
-          </Card>
-
+          <AmateurNaturalistCard />
           <BottomRightCard />
       </div>
 
