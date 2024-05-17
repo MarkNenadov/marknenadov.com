@@ -45,7 +45,7 @@ export default function Home() {
                 I'm builder, problem-solver, and knowledge-sharer. I have over 20 years of experience in the Software Development industry and specialize in full-stack software development.
               </p> 
               <p className="">
-                For the curious, you can see <a className="underline text-blue-900" href="https://github.com/MarkNenadov/uses">what tech I use</a>.
+                For the curious, <a className="underline text-blue-900" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
               </p>
 
               <GenericButton 
