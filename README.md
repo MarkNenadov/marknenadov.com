@@ -16,11 +16,11 @@ NextJs, React, Typescript, TailwindCSS, vscode, Vercel
 
 ## Mobile Lighthouse Scores
 
-As of December 16, 2023, this site received the following mobile lighthouse scores:
+As of August 3, 2024, this site received the following mobile lighthouse scores:
 
 Performance: 99
 Accessibility: 100
-Best Practices: 95
+Best Practices: 96
 SEO: 100
 
 ## TODO
