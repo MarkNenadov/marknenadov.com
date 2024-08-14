@@ -13,7 +13,7 @@ export const AmateurNaturalistCard = () => {
                 I&apos;m more or less interested in every living creature, but over the years birds and moths have particularly caught my imagination. I earnestly collect data for various citizens cience projects, such as iNaturalist (I&apos;ve recently posted my <a className="underline text-blue-900" href="https://docs.google.com/document/d/19-Nd1FMf-i1crleeBk0qfocPLEZFZPEB0-CNjl1a2Ac/edit?usp=sharing">30,000th observation</a>).
               </p> 
               <p className="mb-4">
-                In 2023, I documented 682 research-grade iNaturalist Arthropod species in Essex County, Ontario.  Check out the <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">CBC radio interview</a> and the <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">data</a> I gathered.
+                In 2023, I documented 683 research-grade iNaturalist Arthropod species in Essex County, Ontario.  Check out the <a className="underline text-blue-900" href="https://www.cbc.ca/listen/live-radio/1-80-afternoon-drive/clip/15991630-a-bug-year">CBC radio interview</a> and the <a className="underline text-blue-900" href="https://inaturalist.ca/projects/mark-nenadov-s-bug-year-2023">data</a> I gathered.
               </p>
 
               <GenericButton 
