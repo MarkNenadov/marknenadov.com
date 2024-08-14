@@ -42,7 +42,8 @@ export default function Home() {
           <Card title="Technical Leader">
             <div>
               <p className="mb-4">
-                I'm builder, problem-solver, and knowledge-sharer. I have over 20 years of experience in the Software Development industry and specialize in full-stack software development.
+                I'm a curious software engineer with 24 years of industry experience, specializing in
+                full-stack development.  My roles have included CTO and Senior Software Developer. 
               </p> 
               <p className="">
                 For the curious, <a className="underline text-blue-900" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
