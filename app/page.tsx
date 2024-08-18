@@ -41,7 +41,7 @@ export default function Home() {
 
           <Card title="Technical Leader">
             <div>
-              <p className="mb-4">
+              <p className="mb-4 opacity-85">
                 I'm a curious software engineer with 24 years of industry experience, specializing in
                 full-stack development.  My roles have included CTO and Senior Software Developer. 
               </p> 

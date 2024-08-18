@@ -10,7 +10,7 @@ export default function PublicationCreditListing() {
  
     return (
         <Card title="✍️ Writer / Reviewer">
-            <p className ="pb-4">
+            <p className ="pb-4 opacity-85">
                 I&apos;ve published articles and poetry. My independent research is up at <a className="underline text-blue-900" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
             </p>
 
