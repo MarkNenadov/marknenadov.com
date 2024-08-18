@@ -30,13 +30,13 @@ export default function Home() {
           <Image 
             src={ markImage } 
             alt="Mark Photo" 
-            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]" 
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246] opacity-95" 
            />
 
           <Image 
             src={ markInterestsImage } 
             alt="Mark Interests" 
-            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246]"
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246] opacity-95"
           />
 
           <Card title="Technical Leader">
