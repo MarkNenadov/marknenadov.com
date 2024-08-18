@@ -2,13 +2,13 @@ import Card from "./base/GenericCard"
 
 export const BottomRightCard = () => {
     return (
-      <Card title="Reading">
+      <Card title="📚 Reading">
         <div>
           <p className="mb-4">
             I&apos;m  an avid reader and you can find me on <a className="underline text-blue-900" href="https://www.goodreads.com/user/show/4015564-mark-nenadov">Goodreads</a>.  I&apos;m also collected a number of <a className="underline text-blue-900" href="https://quotes.marknenadov.com">quotes from my reading</a>.
           </p>
-          <div className="font-bold">
-           Photography
+          <div className="font-bold text-lg">
+          📷 Photography
           </div>
 
           <p className="mb-4">

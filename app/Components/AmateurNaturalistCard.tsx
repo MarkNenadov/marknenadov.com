@@ -7,7 +7,7 @@ export const AmateurNaturalistCard = () => {
     const [isCitizenScienceProjectsOpen, setIsCitizenScienceProjectsOpen] = useState( false );
 
     return (
-        <Card title="Enthusiastic Amatuer Naturalist">
+        <Card title="🌱 Enthusiastic Amatuer Naturalist">
             <div>
               <p className="mb-4">
                 I&apos;m more or less interested in every living creature, but over the years birds and moths have particularly caught my imagination. I earnestly collect data for various citizens cience projects, such as iNaturalist (I&apos;ve recently posted my <a className="underline text-blue-900" href="https://docs.google.com/document/d/19-Nd1FMf-i1crleeBk0qfocPLEZFZPEB0-CNjl1a2Ac/edit?usp=sharing">30,000th observation</a>).

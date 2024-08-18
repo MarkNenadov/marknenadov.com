@@ -9,7 +9,7 @@ export default function PublicationCreditListing() {
     const [isReviewsModalOpen, setIsReviewsModalOpen] = useState( false );
  
     return (
-        <Card title="Writer / Reviewer">
+        <Card title="✍️ Writer / Reviewer">
             <p className ="pb-4">
                 I&apos;ve published articles and poetry. My independent research is up at <a className="underline text-blue-900" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
             </p>
