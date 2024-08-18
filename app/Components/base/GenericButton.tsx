@@ -9,7 +9,7 @@ export default function GenericButton( {text, shortText, onClick, dataTestId}: G
     return (
         <button
             type="button"
-            className="bg-white hover:bg-gray-200 font-semibold py-2 px-4 rounded mt-4  border border-1 border-black"
+            className="bg-white hover:bg-gray-200 py-2 px-4 rounded mt-4  border border-1 border-black border-opacity-10"
             onClick={ onClick }
             data-testid={dataTestId || "generic-button"}
         >

@@ -21,6 +21,7 @@ export default function SocialMediaLink( {logoSource, title, href}: SocialMediaL
               height="24" 
               alt={ title }
               title={ title }
+              className="opacity-70"
           />
           </a>
       </div>
