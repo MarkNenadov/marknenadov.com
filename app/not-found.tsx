@@ -1,5 +1,6 @@
 import React from 'react';
 import SocialMediaLinks from './Components/SocialMediaLinks';
+import Link from 'next/link';
 
 export default function Custom404() {
     return (
@@ -12,7 +13,7 @@ export default function Custom404() {
 
                 <div className="w-full m-3 p-3 border border-1 border-black">
                     <span className="text-5xl">404</span>
-                    <div>The page you are looking for does not exist. <a className="underline text-blue-900" href="/">Try this</a>.</div>
+                    <div>The page you are looking for does not exist. <Link className="underline text-blue-900" href="/">Try this</Link>.</div>
                 </div>
 
             </div>
