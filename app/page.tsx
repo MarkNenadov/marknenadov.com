@@ -22,7 +22,6 @@ export default function Home() {
 <div className="min-h-[100vh] max-w-7xl md:m-3">
       <div className={"flex flex-col space-y-3 p-4 md:m-4 w-full items-center"}>
         <div className="text-6xl text-center">Mark Nenadov</div>
-        <div>Ever curious, ever learning.</div>
 
         <SocialMediaLinks />
         
@@ -42,8 +41,8 @@ export default function Home() {
           <Card title="Technical Leader">
             <div>
               <p className="mb-4 opacity-85">
-                I'm a curious software engineer with 24 years of industry experience, specializing in
-                full-stack development.  My roles have included CTO and Senior Software Developer. 
+                I'm a curious software engineer with 24 years of industry experience in full-stack development.  
+                My roles have included CTO and Senior Software Developer. I'm currently working in the Fintech industry.
               </p> 
               <p className="">
                 For the curious, <a className="underline text-blue-900" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
