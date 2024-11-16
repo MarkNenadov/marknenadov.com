@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import twitterImage from '../../public/twitter.png';
+import blueSkyImage from '../../public/bluesky.png';
 import instagramImage from '../../public/instagram.png';
 import gitHubImage from '../../public/github.png';
 import goodreadsImage from '../../public/goodreads.png';
@@ -8,9 +8,9 @@ import SocialMediaLink from './SocialMediaLink';
 
 const socialMediaLinks = [
   {
-    logoSource: twitterImage,
-    title: "Twitter",
-    href: "https://twitter.com/MarkNenadov"
+    logoSource: blueSkyImage,
+    title: "Bluesky",
+    href: "https://bsky.app/profile/mark-nenadov.bsky.social"
   },
   {
     logoSource: instagramImage,
