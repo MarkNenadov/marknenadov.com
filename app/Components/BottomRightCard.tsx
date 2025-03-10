@@ -5,7 +5,7 @@ export const BottomRightCard = () => {
       <Card title="📚 Reading">
         <div>
           <p className="mb-4 opacity-85">
-            I&apos;m  an avid reader and you can find me on <a className="underline text-blue-900" href="https://www.goodreads.com/user/show/4015564-mark-nenadov">Goodreads</a>.  I&apos;m also collected a number of <a className="underline text-blue-900" href="https://quotes.marknenadov.com">quotes from my reading</a>.
+            I&apos;m  an avid reader and you can find me on <a className="underline text-blue-900" href="https://www.goodreads.com/user/show/4015564-mark-nenadov">Goodreads</a>.  I&apos;ve also collected a number of <a className="underline text-blue-900" href="https://quotes.marknenadov.com">quotes from my reading</a>.
           </p>
           <div className="font-bold text-lg">
           📷 Photography
