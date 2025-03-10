@@ -9,17 +9,13 @@ export default function PublicationCreditListing() {
     const [isReviewsModalOpen, setIsReviewsModalOpen] = useState( false );
  
     return (
-        <Card title="✍️ Writer / Reviewer">
+        <Card title="✍️ Publications">
             <p className ="pb-4 opacity-85">
-                I&apos;ve published articles and poetry. My research is up at <a className="underline text-blue-900" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
-            </p>
-
-            <p>
-                I&apos;m also a technical reviewer for publishers.
+                I&apos;ve published articles and poetry. See <a className="underline text-blue-900" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
             </p>
 
             <GenericButton 
-                text="💡 Technical Reviews"
+                text="💡 Technical Review Credits"
                 shortText="Tech Reviews"
                 onClick={ () => setIsReviewsModalOpen( !isReviewsModalOpen ) } 
                 dataTestId='technical-reviews-button'
