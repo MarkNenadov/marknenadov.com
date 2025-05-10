@@ -15,27 +15,32 @@ import { BottomRightCard } from './Components/BottomRightCard';
 import { Footer } from './Components/Footer';
 
 export default function Home() {
-  const [isSelectedProjectsOpen, setIsSeletedProjectsOpen] = useState( false );
+  const [isSelectedProjectsOpen, setIsSelectedProjectsOpen] = useState(false);
 
   return (
-
-<div className="min-h-[100vh] max-w-7xl md:m-3">
-      <div className={"flex flex-col space-y-3 p-4 md:m-4 w-full items-center"}>
-        <div className="text-6xl text-center">Mark Nenadov</div>
+    <main className="min-h-[100vh] max-w-7xl md:m-3">
+      <div className="flex flex-col space-y-3 p-4 md:m-4 w-full items-center">
+        <h1 className="text-6xl text-center">Mark Nenadov</h1>
 
         <SocialMediaLinks />
         
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto items-center">
           <Image 
-            src={ markImage } 
-            alt="Mark Photo" 
-            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246] opacity-95" 
-           />
+            src={markImage} 
+            alt="Mark Nenadov - Headshot" 
+            width={246}
+            height={272}
+            priority
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg" 
+          />
 
           <Image 
-            src={ markInterestsImage } 
-            alt="Mark Interests" 
-            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246] opacity-95"
+            src={markInterestsImage} 
+            alt="Mark's interests and hobbies" 
+            width={246}
+            height={272}
+            priority
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg"
           />
 
           <Card title="Technical Leader">
@@ -44,23 +49,24 @@ export default function Home() {
                 I'm a curious software engineer with 24 years of industry experience in full-stack development.  
                 My roles have included CTO and Senior Software Developer. I'm currently working in the Fintech industry.
               </p> 
-              <p className="">
-                For the curious, <a className="underline text-blue-900" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
+              <p>
+                For the curious, <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
               </p>
 
               <GenericButton 
                 text="💡 Selected Open-Source Projects"
                 shortText="Projects"
-                onClick={ () => setIsSeletedProjectsOpen( !isSelectedProjectsOpen ) } 
+                onClick={() => setIsSelectedProjectsOpen(!isSelectedProjectsOpen)} 
+                aria-expanded={isSelectedProjectsOpen}
+                aria-controls="open-source-projects-modal"
               />
 
-                { isSelectedProjectsOpen && (
-                  <OpenSourceProjectsModal 
-                    setIsSeletedProjectsOpen={ setIsSeletedProjectsOpen } 
-                      openSourceProjects={ openSourceProjects } 
-                  />
-                ) }
-
+              {isSelectedProjectsOpen && (
+                <OpenSourceProjectsModal 
+                  setIsSelectedProjectsOpen={setIsSelectedProjectsOpen} 
+                  openSourceProjects={openSourceProjects} 
+                />
+              )}
             </div>
           </Card>
           <PublicationCreditListing />
@@ -69,10 +75,10 @@ export default function Home() {
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto">
           <AmateurNaturalistCard />
           <BottomRightCard />
-      </div>
+        </div>
 
-      <Footer />
-    </div>
-  </div>
-  )
+        <Footer />
+      </div>
+    </main>
+  );
 }
