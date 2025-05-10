@@ -19,19 +19,21 @@ export default function Home() {
 
   return (
     <main className="min-h-[100vh] max-w-7xl md:m-3">
-      <div className="flex flex-col space-y-3 p-4 md:m-4 w-full items-center">
-        <h1 className="text-6xl text-center">Mark Nenadov</h1>
-
-        <SocialMediaLinks />
+      <div className="flex flex-col space-y-6 p-4 md:m-4 w-full items-center">
+        <header className="text-center space-y-4">
+          <h1 className="text-6xl font-bold">Mark Nenadov</h1>
+          <p className="text-xl text-gray-600">Software Engineer & Technical Leader</p>
+          <SocialMediaLinks />
+        </header>
         
         <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto items-center">
           <Image 
             src={markImage} 
-            alt="Mark Nenadov - Headshot" 
+            alt="Mark Nenadov - Professional headshot" 
             width={246}
             height={272}
             priority
-            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg" 
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg shadow-lg" 
           />
 
           <Image 
@@ -40,33 +42,35 @@ export default function Home() {
             width={246}
             height={272}
             priority
-            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg"
+            className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg shadow-lg"
           />
 
           <Card title="Technical Leader">
-            <div>
+            <div className="space-y-4">
               <p className="mb-4 opacity-85">
                 I'm a curious software engineer with 24 years of industry experience in full-stack development.  
                 My roles have included CTO and Senior Software Developer. I'm currently working in the Fintech industry.
               </p> 
-              <p>
-                For the curious, <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
-              </p>
+              <div className="space-y-3">
+                <p>
+                  For the curious, <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
+                </p>
 
-              <GenericButton 
-                text="💡 Selected Open-Source Projects"
-                shortText="Projects"
-                onClick={() => setIsSelectedProjectsOpen(!isSelectedProjectsOpen)} 
-                aria-expanded={isSelectedProjectsOpen}
-                aria-controls="open-source-projects-modal"
-              />
-
-              {isSelectedProjectsOpen && (
-                <OpenSourceProjectsModal 
-                  setIsSelectedProjectsOpen={setIsSelectedProjectsOpen} 
-                  openSourceProjects={openSourceProjects} 
+                <GenericButton 
+                  text="💡 Selected Open-Source Projects"
+                  shortText="Projects"
+                  onClick={() => setIsSelectedProjectsOpen(!isSelectedProjectsOpen)} 
+                  aria-expanded={isSelectedProjectsOpen}
+                  aria-controls="open-source-projects-modal"
                 />
-              )}
+
+                {isSelectedProjectsOpen && (
+                  <OpenSourceProjectsModal 
+                    setIsSelectedProjectsOpen={setIsSelectedProjectsOpen} 
+                    openSourceProjects={openSourceProjects} 
+                  />
+                )}
+              </div>
             </div>
           </Card>
           <PublicationCreditListing />
