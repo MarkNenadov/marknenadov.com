@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+- Do not use `npm` or `yarn` for install, build, or run commands in this project.
+- Never suggest `yarn install` or `npm install`
+- Always use `bun install`, `bun build`, or `bun run` instead.
+- If you see instructions or scripts using npm/yarn, replace them with the Bun equivalent.
+- This rule is always applied to ensure consistent package management.
