@@ -4,7 +4,7 @@ import OpenSourceProjectsModal from '../OpenSourceProjectsModal';
 
 describe('OpenSourceProjectsModal', () => {
     it('renders the modal', () => {
-        render(<OpenSourceProjectsModal openSourceProjects={[]} setIsSeletedProjectsOpen={() => {}} />)
+        render(<OpenSourceProjectsModal openSourceProjects={[]} setIsSelectedProjectsOpen={() => {}} />)
     
         const modal = screen.getByTestId("generic-modal")
     
@@ -13,7 +13,7 @@ describe('OpenSourceProjectsModal', () => {
 
     it('close the modal', () => {
         const handler = jest.fn();
-        render(<OpenSourceProjectsModal openSourceProjects={[]} setIsSeletedProjectsOpen={handler} />)
+        render(<OpenSourceProjectsModal openSourceProjects={[]} setIsSelectedProjectsOpen={handler} />)
     
         const closeButton = screen.getByTestId("close-button")
 
