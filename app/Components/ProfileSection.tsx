@@ -39,6 +39,7 @@ export const ProfileSection = () => {
           </p> 
           <div className="space-y-3">
             <p>
+              I have <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://wondering.willow.camp/">a blog</a>.
               For the curious, <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
             </p>
 
