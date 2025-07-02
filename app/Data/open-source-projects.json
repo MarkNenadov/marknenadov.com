@@ -10,9 +10,14 @@
         "url": "https://github.com/MarkNenadov/websocket_proxpy"  
     },
     {
-        "name": "kYNAB",
-        "description": "A simple Kotlin interface to YNAB (You Need A Budget)",
-        "url": "https://github.com/MarkNenadov/kYNAB"  
+        "name": "Spring Into AI",
+        "description": "My experiments with Spring AI",
+        "url": "https://github.com/MarkNenadov/spring-into-ai"  
+    },
+    {
+        "name": "thirtygrand",
+        "description": "Python data analysis and visualization tools for my 30,000 wildlife observations.",
+        "url": "https://github.com/MarkNenadov/thirtygrand"  
     },
     {
         "name": "uciti",
