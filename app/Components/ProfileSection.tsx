@@ -7,9 +7,11 @@ import markInterestsImage from '../../public/mark-interests.webp';
 import { useState } from 'react';
 import OpenSourceProjectsModal from './modals/OpenSourceProjectsModal';
 import openSourceProjects from '../Data/open-source-projects.json';
+import BlogPostsModal from './modals/BlogPostsModal';
 
 export const ProfileSection = () => {
   const [isSelectedProjectsOpen, setIsSelectedProjectsOpen] = useState(false);
+  const [isBlogModalOpen, setIsBlogModalOpen] = useState(false);
 
   return (
     <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto items-center">
@@ -24,7 +26,7 @@ export const ProfileSection = () => {
 
       <Image 
         src={markInterestsImage} 
-        alt="Mark&apos;s interests and hobbies" 
+        alt="Mark's interests and hobbies" 
         width={246}
         height={272}
         priority
@@ -33,24 +35,29 @@ export const ProfileSection = () => {
 
       <Card title="Technical Leader">
         <div className="space-y-4">
-          <p className="mb-4 opacity-85">
-            I&apos;m a curious software engineer with 24 years of industry experience in full-stack development.  
-            My roles have included CTO and Senior Software Developer. I&apos;m currently working in the Fintech industry.
+          <p className="mb-1 opacity-85">
+            I have ~24 years of full-stack engineering experience.  
+            My roles have included CTO and Senior Software Developer. I&apos;m currently in the Fintech industry.
+            For the curious, <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
           </p> 
-          <div className="space-y-3">
-            <p>
-              I have <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://wondering.willow.camp/">a blog</a>.
-              For the curious, <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
-            </p>
-
+          <div className="flex flex-col space-y-3 items-center">
+            <GenericButton 
+              text="📝 View Blog Posts"
+              shortText="Blog Posts"
+              onClick={() => setIsBlogModalOpen(true)}
+              className="max-w-md w-full"
+            />
+            {isBlogModalOpen && (
+              <BlogPostsModal setIsBlogModalOpen={setIsBlogModalOpen} />
+            )}
             <GenericButton 
               text="💡 Selected Open-Source Projects"
               shortText="Projects"
               onClick={() => setIsSelectedProjectsOpen(!isSelectedProjectsOpen)} 
               aria-expanded={isSelectedProjectsOpen}
               aria-controls="open-source-projects-modal"
+              className="max-w-md w-full"
             />
-
             {isSelectedProjectsOpen && (
               <OpenSourceProjectsModal 
                 setIsSelectedProjectsOpen={setIsSelectedProjectsOpen} 

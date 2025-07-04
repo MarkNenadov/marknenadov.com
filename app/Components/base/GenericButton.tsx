@@ -2,14 +2,15 @@ interface GenericButtonProps {
     text: string,
     shortText?: string,
     onClick: () => void,
-    dataTestId?: string
+    dataTestId?: string,
+    className?: string
 }
 
-export default function GenericButton( {text, shortText, onClick, dataTestId}: GenericButtonProps) {
+export default function GenericButton( {text, shortText, onClick, dataTestId, className}: GenericButtonProps) {
     return (
         <button
             type="button"
-            className="bg-white hover:bg-gray-200 py-2 px-4 rounded mt-4  border border-1 border-black border-opacity-10"
+            className={`bg-white hover:bg-gray-200 py-2 px-4 rounded mt-4  border border-1 border-black border-opacity-10 ${className || ''}`}
             onClick={ onClick }
             data-testid={dataTestId || "generic-button"}
         >
