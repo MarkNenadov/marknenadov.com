@@ -3,10 +3,10 @@ import GenericButton from "./GenericButton";
 import GenericBox from "./GenericBox";
 
 interface GenericModalProps {
-    title: string,
-    children: ReactNode,
-    closeHandler: () => void,
-    dataTestId?: string
+    title: string;
+    children: ReactNode;
+    closeHandler: () => void;
+    dataTestId?: string;
 }
 
 export default function GenericModal( {title, children, dataTestId, closeHandler}: GenericModalProps) {

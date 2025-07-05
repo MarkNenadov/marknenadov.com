@@ -1,9 +1,9 @@
 interface GenericButtonProps {
-    text: string,
-    shortText?: string,
-    onClick: () => void,
-    dataTestId?: string,
-    className?: string
+    text: string;
+    shortText?: string;
+    onClick: () => void;
+    dataTestId?: string;
+    className?: string;
 }
 
 export default function GenericButton( {text, shortText, onClick, dataTestId, className}: GenericButtonProps) {

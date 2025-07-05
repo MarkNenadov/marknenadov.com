@@ -4,14 +4,13 @@ import GenericButton from './base/GenericButton';
 import PublicationCreditListing from './PublicationCreditListing';
 import markImage from '../../public/mark.jpeg';
 import markInterestsImage from '../../public/mark-interests.webp';
-import { useState } from 'react';
 import OpenSourceProjectsModal from './modals/OpenSourceProjectsModal';
 import openSourceProjects from '../Data/open-source-projects.json';
 import BlogPostsModal from './modals/BlogPostsModal';
+import { useModals } from '../hooks/useModal';
 
 export const ProfileSection = () => {
-  const [isSelectedProjectsOpen, setIsSelectedProjectsOpen] = useState(false);
-  const [isBlogModalOpen, setIsBlogModalOpen] = useState(false);
+  const { isModalOpen, openModal, closeModal } = useModals(['blog', 'projects'] as const);
 
   return (
     <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto items-center">
@@ -44,23 +43,23 @@ export const ProfileSection = () => {
             <GenericButton 
               text="📝 View Blog Posts"
               shortText="Blog Posts"
-              onClick={() => setIsBlogModalOpen(true)}
+              onClick={() => openModal('blog')}
               className="w-full"
             />
-            {isBlogModalOpen && (
-              <BlogPostsModal setIsBlogModalOpen={setIsBlogModalOpen} />
+            {isModalOpen('blog') && (
+              <BlogPostsModal onClose={() => closeModal('blog')} />
             )}
             <GenericButton 
               text="💡 Open-Source Projects"
               shortText="Projects"
-              onClick={() => setIsSelectedProjectsOpen(!isSelectedProjectsOpen)} 
-              aria-expanded={isSelectedProjectsOpen}
+              onClick={() => openModal('projects')} 
+              aria-expanded={isModalOpen('projects')}
               aria-controls="open-source-projects-modal"
               className="w-full"
             />
-            {isSelectedProjectsOpen && (
+            {isModalOpen('projects') && (
               <OpenSourceProjectsModal 
-                setIsSelectedProjectsOpen={setIsSelectedProjectsOpen} 
+                setIsSelectedProjectsOpen={() => closeModal('projects')} 
                 openSourceProjects={openSourceProjects} 
               />
             )}

@@ -1,12 +1,12 @@
-import { useState } from 'react';
 import Image from 'next/image';
 import Card from "./base/GenericCard";
 import GenericButton from './base/GenericButton';
 import publicationCredits from '../Data/publication-credits.json';
 import TechnicalReviewsModal from './modals/TechnicalReviewsModal';
+import { useModal } from '../hooks/useModal';
 
 export default function PublicationCreditListing() {
-    const [isReviewsModalOpen, setIsReviewsModalOpen] = useState( false );
+    const { isOpen: isReviewsModalOpen, openModal, closeModal } = useModal();
  
     return (
         <Card title="✍️ Publications">
@@ -18,14 +18,14 @@ export default function PublicationCreditListing() {
                 <GenericButton 
                     text="💡 Technical Reviews"
                     shortText="Reviews"
-                    onClick={ () => setIsReviewsModalOpen( !isReviewsModalOpen ) } 
+                    onClick={ openModal } 
                     dataTestId='technical-reviews-button'
                     className="w-full"
                 />
 
                 { isReviewsModalOpen && (
                     <TechnicalReviewsModal 
-                        setIsReviewsModalOpen={ setIsReviewsModalOpen } 
+                        setIsReviewsModalOpen={ closeModal } 
                         publicationCredits={ publicationCredits } 
                     />
                 ) }

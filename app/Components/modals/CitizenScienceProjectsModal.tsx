@@ -2,7 +2,7 @@ import React from "react";
 import GenericModal from "../base/GenericModal";
 
 interface CitizenScienceProjectsModalProps {
-    setIsSeletedProjectsOpen: (value: boolean) => void;
+    setIsSelectedProjectsOpen: (value: boolean) => void;
 }
 
 interface Project {
@@ -17,11 +17,11 @@ const PROJECTS : Project[] = [
     { name: "Christmas Bird Counts (ie. Point Pelee NP and Holiday)"}
 ];
 
-export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}: CitizenScienceProjectsModalProps) {
+export default function CitizenScienceProjectsModal( {setIsSelectedProjectsOpen}: CitizenScienceProjectsModalProps) {
     return (
         <GenericModal 
             title="Selected Citizen Science Projects"
-            closeHandler={ () => setIsSeletedProjectsOpen( false )  }
+            closeHandler={ () => setIsSelectedProjectsOpen( false )  }
         >
             <p className="mb-3 text-text-secondary">I&apos;m a regular or semi-regular contributor to each of these efforts:</p>
             <ul className="list-disc list-inside text-text-secondary">

@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 interface GenericBoxProps {
-    children: ReactNode
-    title: string
+    children: ReactNode;
+    title: string;
 }
 
 

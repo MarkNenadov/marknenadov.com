@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import Card from './base/GenericCard';
 import GenericButton from './base/GenericButton';
 import CitizenScienceProjectsModal from './modals/CitizenScienceProjectsModal';
+import { useModal } from '../hooks/useModal';
 
 export const AmateurNaturalistCard = () => {
-    const [isCitizenScienceProjectsOpen, setIsCitizenScienceProjectsOpen] = useState( false );
+    const { isOpen: isCitizenScienceProjectsOpen, openModal, closeModal } = useModal();
 
     return (
         <Card title="🌱 Enthusiastic Amatuer Naturalist">
@@ -19,13 +19,13 @@ export const AmateurNaturalistCard = () => {
               <GenericButton 
                 text="💡 Citizen Science Projects"
                 shortText="Projects"
-                onClick={ () => setIsCitizenScienceProjectsOpen( !isCitizenScienceProjectsOpen ) } 
+                onClick={ openModal } 
                 className="w-full"
               />
 
                 { isCitizenScienceProjectsOpen && (
                   <CitizenScienceProjectsModal 
-                    setIsSeletedProjectsOpen={ setIsCitizenScienceProjectsOpen } 
+                    setIsSelectedProjectsOpen={ closeModal } 
                   />
                 ) }
             </div>

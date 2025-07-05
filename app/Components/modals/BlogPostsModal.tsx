@@ -8,8 +8,10 @@ interface BlogPost {
   description: string;
 }
 
-interface BlogPostsModalProps {
-  setIsBlogModalOpen: (value: boolean) => void;
+import { BaseModalProps } from '../../types/modal';
+
+interface BlogPostsModalProps extends BaseModalProps {
+  // No additional props needed
 }
 
 function decodeHtmlEntities(str: string) {
@@ -27,7 +29,7 @@ function stripHtmlTags(str: string) {
   return str.replace(/<[^>]*>/g, '');
 }
 
-export default function BlogPostsModal({ setIsBlogModalOpen }: BlogPostsModalProps) {
+export default function BlogPostsModal({ onClose }: BlogPostsModalProps) {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -41,7 +43,7 @@ export default function BlogPostsModal({ setIsBlogModalOpen }: BlogPostsModalPro
   return (
     <GenericModal
       title="Blog Posts from Wondering Willow"
-      closeHandler={() => setIsBlogModalOpen(false)}
+      closeHandler={onClose}
     >
       {loading ? (
         <div className="text-center py-4 text-text-tertiary">Loading blog posts...</div>
