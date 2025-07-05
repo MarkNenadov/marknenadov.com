@@ -13,14 +13,14 @@ export default function TechnicalReviewsModal( {publicationCredits, setIsReviews
             dataTestId="technical-review-modal"
             closeHandler={ () => setIsReviewsModalOpen( false )  }
         >
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside text-text-secondary">
                 {            
                     publicationCredits.filter( 
                         p => p.type === "Technical Reviewer" ).map( ({title, url, publisher, date }
                     ) => 
-                        <li key={title}>
+                        <li key={title} className="mb-2">
                             <a 
-                                className="underline text-blue-900" 
+                                className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" 
                                 href={url}
                                 aria-label={ `Link to ${url}` }
                             >

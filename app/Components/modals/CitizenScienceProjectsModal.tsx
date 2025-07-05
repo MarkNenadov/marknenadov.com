@@ -23,14 +23,14 @@ export default function CitizenScienceProjectsModal( {setIsSeletedProjectsOpen}:
             title="Selected Citizen Science Projects"
             closeHandler={ () => setIsSeletedProjectsOpen( false )  }
         >
-            <p>I&apos;m a regular or semi-regular contributor to each of these efforts:</p>
-            <ul className="list-disc list-inside">
+            <p className="mb-3 text-text-secondary">I&apos;m a regular or semi-regular contributor to each of these efforts:</p>
+            <ul className="list-disc list-inside text-text-secondary">
                 { 
                     PROJECTS.map( ( {name, url}) => {
                         return !!url ? 
-                                <li key={name} ><a className="underline text-blue-900" href={url}>{ name }</a></li> 
+                                <li key={name} className="mb-1"><a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href={url}>{ name }</a></li> 
                             : 
-                                <li>{name}</li>
+                                <li key={name} className="mb-1">{name}</li>
                     })
                 }
             </ul>

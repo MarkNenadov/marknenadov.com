@@ -19,12 +19,12 @@ export default function OpenSourceProjectsModal({ openSourceProjects, setIsSelec
             title="Selected Open Source Projects"
             closeHandler={() => setIsSelectedProjectsOpen(false)}
         >
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside text-text-secondary">
                 {            
                     openSourceProjects.map(({ name, url, description }) => (
-                        <li key={name}>
+                        <li key={name} className="mb-2">
                             <a 
-                                className="underline text-blue-900 hover:text-blue-700 transition-colors" 
+                                className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" 
                                 href={url}
                                 target="_blank"
                                 rel="noopener noreferrer"

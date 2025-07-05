@@ -10,23 +10,26 @@ export default function PublicationCreditListing() {
  
     return (
         <Card title="✍️ Publications">
-            <p className ="pb-4 opacity-85">
-                I&apos;ve published articles and poetry. See <a className="underline text-blue-900" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
-            </p>
+            <div className="space-y-3">
+                <p className="text-text-secondary leading-relaxed text-sm">
+                    I&apos;ve published articles and poetry. See <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
+                </p>
 
-            <GenericButton 
-                text="💡 Technical Review Credits"
-                shortText="Tech Reviews"
-                onClick={ () => setIsReviewsModalOpen( !isReviewsModalOpen ) } 
-                dataTestId='technical-reviews-button'
-            />
-
-            { isReviewsModalOpen && (
-                <TechnicalReviewsModal 
-                    setIsReviewsModalOpen={ setIsReviewsModalOpen } 
-                    publicationCredits={ publicationCredits } 
+                <GenericButton 
+                    text="💡 Technical Reviews"
+                    shortText="Reviews"
+                    onClick={ () => setIsReviewsModalOpen( !isReviewsModalOpen ) } 
+                    dataTestId='technical-reviews-button'
+                    className="w-full"
                 />
-            ) }
+
+                { isReviewsModalOpen && (
+                    <TechnicalReviewsModal 
+                        setIsReviewsModalOpen={ setIsReviewsModalOpen } 
+                        publicationCredits={ publicationCredits } 
+                    />
+                ) }
+            </div>
     </Card>
     );
 }

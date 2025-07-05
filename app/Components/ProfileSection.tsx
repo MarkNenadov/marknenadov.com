@@ -21,7 +21,7 @@ export const ProfileSection = () => {
         width={246}
         height={272}
         priority
-        className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg shadow-lg" 
+        className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300 hover:scale-[1.02]" 
       />
 
       <Image 
@@ -30,33 +30,33 @@ export const ProfileSection = () => {
         width={246}
         height={272}
         priority
-        className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] opacity-95 rounded-lg shadow-lg"
+        className="max-h-[272px] min-h-[272px] max-w-[246px] min-w-[246px] rounded-2xl shadow-elegant hover:shadow-elegant-lg transition-all duration-300 hover:scale-[1.02]"
       />
 
       <Card title="Technical Leader">
-        <div className="space-y-4">
-          <p className="mb-1 opacity-85">
+        <div className="space-y-3">
+          <p className="text-text-secondary leading-relaxed text-sm">
             I have ~24 years of full-stack engineering experience.  
             My roles have included CTO and Senior Software Developer. I&apos;m currently in the Fintech industry.
-            For the curious, <a className="underline text-blue-900 hover:text-blue-700 transition-colors" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
+            For the curious, <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
           </p> 
-          <div className="flex flex-col space-y-3 items-center">
+          <div className="flex flex-col space-y-1.5 items-center">
             <GenericButton 
               text="📝 View Blog Posts"
               shortText="Blog Posts"
               onClick={() => setIsBlogModalOpen(true)}
-              className="max-w-md w-full"
+              className="w-full"
             />
             {isBlogModalOpen && (
               <BlogPostsModal setIsBlogModalOpen={setIsBlogModalOpen} />
             )}
             <GenericButton 
-              text="💡 Selected Open-Source Projects"
+              text="💡 Open-Source Projects"
               shortText="Projects"
               onClick={() => setIsSelectedProjectsOpen(!isSelectedProjectsOpen)} 
               aria-expanded={isSelectedProjectsOpen}
               aria-controls="open-source-projects-modal"
-              className="max-w-md w-full"
+              className="w-full"
             />
             {isSelectedProjectsOpen && (
               <OpenSourceProjectsModal 
