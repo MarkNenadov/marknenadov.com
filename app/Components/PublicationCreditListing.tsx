@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Card from "./base/GenericCard";
+import { Card } from "./base/Card";
 import GenericButton from './base/GenericButton';
 import publicationCredits from '../Data/publication-credits.json';
 import TechnicalReviewsModal from './modals/TechnicalReviewsModal';
@@ -10,11 +10,13 @@ export default function PublicationCreditListing() {
  
     return (
         <Card title="✍️ Publications">
-            <div className="space-y-3">
+            <Card.Content>
                 <p className="text-text-secondary leading-relaxed text-sm">
                     I&apos;ve published articles and poetry. See <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
                 </p>
-
+            </Card.Content>
+            
+            <Card.Actions>
                 <GenericButton 
                     text="💡 Technical Reviews"
                     shortText="Reviews"
@@ -29,7 +31,7 @@ export default function PublicationCreditListing() {
                         publicationCredits={ publicationCredits } 
                     />
                 ) }
-            </div>
-    </Card>
+            </Card.Actions>
+        </Card>
     );
 }
