@@ -18,11 +18,10 @@ export default function GenericModal( {title, children, dataTestId, closeHandler
             onClick={closeHandler}
             >
             <div onClick={(e) => e.stopPropagation()}>
-                <GenericBox title={title}>
+                <GenericBox title={title} closeHandler={closeHandler}>
                     <div className="text-left text-text-secondary">
                         {children}
                     </div>
-                    <GenericButton text="Close" onClick={closeHandler} dataTestId="close-button" />
                 </GenericBox>
             </div>
         </div>
