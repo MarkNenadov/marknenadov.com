@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Card from './base/GenericCard';
 import GenericButton from './base/GenericButton';
 import PublicationCreditListing from './PublicationCreditListing';
-import markImage from '../../public/mark.jpeg';
+import markImage from '../../public/markn.png';
 import markInterestsImage from '../../public/mark-interests.webp';
 import OpenSourceProjectsModal from './modals/OpenSourceProjectsModal';
 import openSourceProjects from '../Data/open-source-projects.json';
