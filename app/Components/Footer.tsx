@@ -1,4 +1,3 @@
-import six from '../../public/thesix.png';
 import Image from 'next/image';
 
 export const Footer = () => {
@@ -10,13 +9,6 @@ export const Footer = () => {
           href="https://github.com/MarkNenadov/marknenadov.com">
             Source code
         </a>. 
-
-              <Image 
-        src={six} 
-        alt="xyz" 
-        priority
-      />
-
       </div>
     );
 }
