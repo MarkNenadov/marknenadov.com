@@ -14,6 +14,7 @@ const PROJECTS: Project[] = [
     { name: "eBird", url: "https://ebird.org/ebird/profile/MzE3NzQ1/world" },
     { name: "iNaturalist", url: "https://inaturalist.org" },
     { name: "BugGuide.net", url: "https://bugguide.net" },
+    { name: "Mushroom Observer", url: "https://mushroomobserver.org/" },
     { name: "Christmas Bird Counts (ie. Point Pelee NP and Holiday)"}
 ];
 
