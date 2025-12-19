@@ -35,7 +35,7 @@ export const ProfileSection = () => {
       <Card title="Technical Leader">
         <div className="space-y-3">
           <p className="text-text-secondary leading-relaxed text-sm">
-            I have ~24 years of full-stack engineering experience.  
+            I have ~25 years of full-stack engineering experience.  
             My roles have included CTO and Senior Software Developer. I&apos;m currently in the Fintech industry.
             For the curious, <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
           </p> 
