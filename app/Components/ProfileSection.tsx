@@ -6,11 +6,10 @@ import markImage from '../../public/markn.png';
 import markInterestsImage from '../../public/mark-interests.webp';
 import OpenSourceProjectsModal from './modals/OpenSourceProjectsModal';
 import openSourceProjects from '../Data/open-source-projects.json';
-import BlogPostsModal from './modals/BlogPostsModal';
 import { useModals } from '../hooks/useModal';
 
 export const ProfileSection = () => {
-  const { isModalOpen, openModal, closeModal } = useModals(['blog', 'projects'] as const);
+  const { isModalOpen, openModal, closeModal } = useModals(['projects'] as const);
 
   return (
     <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4 w-full lg:w-auto items-center">
@@ -40,16 +39,7 @@ export const ProfileSection = () => {
             For the curious, <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://github.com/MarkNenadov/uses">here is the tech I use</a>.
           </p> 
           <div className="flex flex-col space-y-1.5 items-center">
-            <GenericButton 
-              text="📝 View Blog Posts"
-              shortText="Blog Posts"
-              onClick={() => openModal('blog')}
-              className="w-full"
-            />
-            {isModalOpen('blog') && (
-              <BlogPostsModal onClose={() => closeModal('blog')} />
-            )}
-            <GenericButton 
+            <GenericButton
               text="💡 Open-Source Projects"
               shortText="Projects"
               onClick={() => openModal('projects')} 

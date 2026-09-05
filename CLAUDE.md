@@ -25,7 +25,6 @@ This project uses **Bun** as the package manager (not npm/yarn):
   - `__tests__/` - Component unit tests
 - **`app/Data/`** - Static JSON data files for projects and publications
 - **`app/Models/`** - TypeScript interfaces and types
-- **`app/api/`** - API routes (blog RSS feed proxy)
 
 ### Component Architecture
 
@@ -33,7 +32,7 @@ The site uses a **modal-based content display system** where sections open detai
 
 ### Data Flow
 
-Static data is stored in JSON files with corresponding TypeScript interfaces. External blog content is fetched via an API route that proxies RSS feeds. All data is type-safe through proper TypeScript modeling.
+Static data is stored in JSON files with corresponding TypeScript interfaces. All data is type-safe through proper TypeScript modeling.
 
 ### Testing Strategy
 
@@ -44,5 +43,4 @@ Tests are co-located with components in `__tests__/` directories. Uses Jest with
 - **Package Manager**: Must use Bun (enforced by `.cursor/rules/forbid-npm-yarn.mdc`)
 - **Component Pattern**: Always use the existing base components for consistency
 - **Modal System**: Content sections use the GenericModal component for detailed displays
-- **API Integration**: External content (blog) is fetched through API routes, not direct client calls
 - **Performance**: Site maintains excellent Lighthouse scores - preserve optimization patterns
