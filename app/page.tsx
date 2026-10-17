@@ -1,5 +1,4 @@
 "use client"
-/* eslint-disable react/no-unescaped-entities */
 import Card from './Components/base/GenericCard';
 import PublicationCreditListing from './Components/PublicationCreditListing';
 import SocialMediaLinks from './Components/SocialMediaLinks';
