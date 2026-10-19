@@ -7,7 +7,7 @@ export const AmateurNaturalistCard = () => {
     const { isOpen: isCitizenScienceProjectsOpen, openModal, closeModal } = useModal();
 
     return (
-        <Card title="🌱 Enthusiastic Amatuer Naturalist">
+        <Card title="🌱 Enthusiastic Amateur Naturalist">
             <Card.Content>
               <p className="text-text-secondary leading-relaxed text-sm">
                 I&apos;m interested in every living creature, but birds and moths have particularly caught my imagination. I collect data for citizen science projects, such as iNaturalist (I&apos;ve recently posted my <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://docs.google.com/document/d/19-Nd1FMf-i1crleeBk0qfocPLEZFZPEB0-CNjl1a2Ac/edit?usp=sharing">30,000th observation</a>).
