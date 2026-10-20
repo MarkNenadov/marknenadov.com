@@ -10,7 +10,7 @@ This project uses **Bun** as the package manager (not npm/yarn):
 - **Build**: `bun run build` - Production build  
 - **Start**: `bun run start` - Production server
 - **Lint**: `bun run lint` - ESLint
-- **Typecheck**: `bun run typecheck` - TypeScript with no emit
+- **Typecheck**: `bun run typecheck` - Generate Next.js types, then TypeScript with no emit
 - **Test**: `bun run test` - Jest test suite
 - **Test Watch**: `bun run test:watch` - Jest in watch mode
 
