@@ -1,12 +1,6 @@
-import { PublicationCredit } from "../../Models/PublicationCredit";
+import { OpenSourceProject } from "../../Models/OpenSourceProject";
 import GenericModal from "../base/GenericModal";
 import { Dispatch, SetStateAction } from "react";
-
-interface OpenSourceProject {
-    name: string;
-    url: string;
-    description: string;
-}
 
 interface OpenSourceProjectsModalProps {
     openSourceProjects: OpenSourceProject[];

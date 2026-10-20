@@ -15,15 +15,10 @@ export function useModal(initialState: boolean = false) {
     setIsOpen(false);
   }, []);
 
-  const toggleModal = useCallback(() => {
-    setIsOpen(prev => !prev);
-  }, []);
-
   return {
     isOpen,
     openModal,
     closeModal,
-    toggleModal,
   } as const;
 }
 
@@ -47,10 +42,6 @@ export function useModals<T extends string>(modalNames: readonly T[]) {
     setModals(prev => ({ ...prev, [modalName]: false }));
   }, []);
 
-  const toggleModal = useCallback((modalName: T) => {
-    setModals(prev => ({ ...prev, [modalName]: !prev[modalName] }));
-  }, []);
-
   const isModalOpen = useCallback((modalName: T) => {
     return modals[modalName];
   }, [modals]);
@@ -59,6 +50,5 @@ export function useModals<T extends string>(modalNames: readonly T[]) {
     isModalOpen,
     openModal,
     closeModal,
-    toggleModal,
   } as const;
 }

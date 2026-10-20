@@ -1,4 +1,4 @@
-interface OpenSourceProject {
+export interface OpenSourceProject {
     name: string,
     description: string,
     url: string
