@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_CA',
   },
+  twitter: { card: 'summary_large_image' },
   alternates: {
     types: {
       'application/rss+xml': '/posts/rss',

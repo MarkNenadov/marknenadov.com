@@ -18,3 +18,5 @@ Run these from this folder. The blog is a self-contained app, deployed as its ow
 - `content/posts/*.html`, `content/pages/about.html` - post and page bodies
 - `lib/site.ts` - site name and domain, both in one place
 - `app/globals.css` - color tokens for light and dark mode, and the post typography
+- `lib/shareCard.tsx` - the social share card design
+- `assets/fonts/` - fonts for the share cards, subset with `pyftsubset --layout-features=kern` because `next/og` can't parse their full substitution tables

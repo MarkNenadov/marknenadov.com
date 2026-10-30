@@ -4,6 +4,15 @@ const nextConfig = {
     turbopack: {
         root: __dirname,
     },
+    async redirects() {
+        return [
+          {
+            source: '/what-can-fyodor-dostoevsky-1821-1861-teach-software-engineers',
+            destination: '/what-can-fyodor-dostoevsky-1821-1881-teach-software-engineers',
+            permanent: true,
+          },
+        ]
+    },
     async headers() {
         return [
           {
