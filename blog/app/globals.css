@@ -140,13 +140,6 @@
   margin-top: 0;
 }
 
-.post-body > p:first-child {
-  color: var(--color-ink);
-  font-size: 1.12em;
-  letter-spacing: -0.014em;
-  line-height: 1.55;
-}
-
 .post-body h2,
 .post-body h3 {
   color: var(--color-ink);
