@@ -1,0 +1,191 @@
+[
+  {
+    "slug": "books-from-2025",
+    "title": "📕 Books From 2025",
+    "publishedAt": "2025-12-13T07:43:00Z",
+    "tags": [
+      "books",
+      "reading"
+    ],
+    "excerpt": "David Cone once said “Pitchers need to be students, forever students.” As much as graduates might like to think about “being done all that learning,” I think it’s better to think…"
+  },
+  {
+    "slug": "how-to-remember-what-year-you-are-in",
+    "title": "🤔 How To Remember What Year You Are In",
+    "publishedAt": "2025-10-06T19:33:00Z",
+    "tags": [
+      "ai"
+    ],
+    "excerpt": "If you ever forget what year it is, here’s my suggestion: Recall that it’s the year where we see an image with a hand in it and immediately count the number of fingers to ensure…"
+  },
+  {
+    "slug": "on-rest-and-its-alternatives",
+    "title": "😮‍💨 On REST and Its Alternatives",
+    "publishedAt": "2025-10-04T14:49:00Z",
+    "tags": [
+      "career",
+      "developer-life",
+      "personal-development"
+    ],
+    "excerpt": "Sorry, this isn’t going to settle the REST vs. GraphQL debate. I’m talking about a different kind of “rest.” This article will be more general and contemplative than technical."
+  },
+  {
+    "slug": "hold-your-code-loosely-on-a-tight-leash",
+    "title": "🤔 Hold Your Code Loosely...On A Tight Leash",
+    "publishedAt": "2025-09-09T12:11:10Z",
+    "tags": [
+      "deleting-code",
+      "developer-life"
+    ],
+    "excerpt": "Developers should take deep ownership over their code. We should strive for a high level of personal stake in what we deploy. A little pride in our craft is quite appropriate."
+  },
+  {
+    "slug": "the-ancient-of-datas-living-in-the-past-lane",
+    "title": "🏛 The Ancient of Datas: Living in the Past Lane",
+    "publishedAt": "2025-08-23T20:28:00Z",
+    "tags": [
+      "nostalgia",
+      "developer-life"
+    ],
+    "excerpt": "Two anecdotes reminded me how quickly times change: 1 - I was heading to Alaska and wanted to quickly grab a sticker to make my suitcase more recognizable. “Ok, a laptop sticker…"
+  },
+  {
+    "slug": "a-mental-model-for-understanding-llm-limitations",
+    "title": "🤖 A Mental Model for Understanding LLM Limitations",
+    "publishedAt": "2025-08-08T19:03:00Z",
+    "tags": [
+      "ai",
+      "llms"
+    ],
+    "excerpt": "Imagine you have a “depth-finding” boat and you need to locate the deepest point in a large lake. For our purposes, the lake is divided into squares. Let’s also say you have…"
+  },
+  {
+    "slug": "ruby-intensifies-or-ruby-is-weird",
+    "title": "♦️ Ruby Intensifies, or, Ruby Is Weird",
+    "publishedAt": "2025-08-08T12:22:00Z",
+    "tags": [
+      "ruby",
+      "programming-languages"
+    ],
+    "excerpt": "P. G. Wodehouse was known as the performing flea of British literature. But what if I tried my hand at being the performing flea of the Ruby language? I mean, aging sardonic…"
+  },
+  {
+    "slug": "adventures-in-dotfiles-some-basic-principles",
+    "title": "🚧 Adventures in Dotfiles - Some Basic Principles",
+    "publishedAt": "2025-08-04T19:24:00Z",
+    "tags": [
+      "dotfiles",
+      "developer-life"
+    ],
+    "excerpt": "Having previously shared some thoughts about the culture surrounding dotfiles repos in The Joys Of Dotfiles, I figure it is about time I write something about my own dotfiles."
+  },
+  {
+    "slug": "what-can-sherlock-holmes-teach-software-engineers",
+    "title": "🔎 What Can Sherlock Holmes Teach Software Engineers?",
+    "publishedAt": "2025-07-30T11:59:00Z",
+    "tags": [
+      "sherlock-holmes",
+      "curiosity"
+    ],
+    "excerpt": "Arthur Conan Doyle’s legendary Sherlock Holmes looms large in my mind when I think of the intersections of literature and software engineering. As is often the case with…"
+  },
+  {
+    "slug": "is-the-dry-run-really-dry",
+    "title": "💡 Is The Dry Run Really Dry?",
+    "publishedAt": "2025-07-26T13:50:00Z",
+    "tags": [
+      "dotfiles"
+    ],
+    "excerpt": "My mac dotfiles installer has a dry run flag. I’ve added some new features since I originally implemented it, so I wanted to be able to easily/programatically determine that my…"
+  },
+  {
+    "slug": "the-joys-of-dotfiles",
+    "title": "💡 The Joys of Dotfiles",
+    "publishedAt": "2025-07-24T23:42:00Z",
+    "tags": [
+      "dotfiles",
+      "developer-life"
+    ],
+    "excerpt": "This recent blog post reminded me that I need to give some love to my meagre Dotfiles repo. Dotfile sharing is a refreshing outpost in the sea of GitHub repos. A reminder that the…"
+  },
+  {
+    "slug": "what-can-the-grateful-dead-teach-software-engineers-part-1",
+    "title": "🎸 What Can The Grateful Dead Teach Software Engineers? - Part 1",
+    "publishedAt": "2025-07-22T11:46:00Z",
+    "tags": [
+      "music"
+    ],
+    "excerpt": "In the sixth stanza of “The Music Never Stopped”, written by John Perry Barlow and Bob Weir in 1975, there’s a line:…"
+  },
+  {
+    "slug": "ten-oh-how-good-it-feels-moments-for-developers",
+    "title": "🎉 Ten \"Oh, How Good It Feels!\" Moments for Developers",
+    "publishedAt": "2025-07-18T22:50:00Z",
+    "tags": [
+      "developer-life"
+    ],
+    "excerpt": "Our industry has its challenges and stresses, but there are some rewarding “Oh, How Good It Feels!” moments that make it feel worthwhile."
+  },
+  {
+    "slug": "a-time-to-tear-down-what-can-solomon-teach-software-engineers",
+    "title": "❌ A Time To Tear Down: What Can Solomon Teach Software Engineers?",
+    "publishedAt": "2025-07-12T14:38:00Z",
+    "tags": [
+      "bible",
+      "literature",
+      "deleting-code"
+    ],
+    "excerpt": "Our industry rightfully emphasizes building things. Don’t tell me about your years of experience. Or what programming languages you know. Or the companies you’ve been on the…"
+  },
+  {
+    "slug": "what-can-fyodor-dostoevsky-1821-1861-teach-software-engineers",
+    "title": "🤔 What Can Fyodor Dostoevsky (1821-1861) Teach Software Engineers?",
+    "publishedAt": "2025-07-10T12:06:00Z",
+    "tags": [
+      "literature"
+    ],
+    "excerpt": "Sometimes you start a project you know you can’t pull off. It’s an outrageous stretch, but for some reason you just have to do it. It’s flowing in your veins. You will burst if…"
+  },
+  {
+    "slug": "2025-its-perils-and-prospects",
+    "title": "👀 2025: Its Perils and Prospects",
+    "publishedAt": "2025-07-08T12:17:00Z",
+    "tags": [
+      "ai",
+      "humour",
+      "node"
+    ],
+    "excerpt": "It’s here. The year that…"
+  },
+  {
+    "slug": "what-can-p-g-wodehouse-1881-1975-teach-software-engineers",
+    "title": "🤔 What Can P.G. Wodehouse (1881-1975) Teach Software Engineers?",
+    "publishedAt": "2025-07-05T04:27:00Z",
+    "tags": [
+      "literature"
+    ],
+    "excerpt": "What could the “performing flea of English literature”, who wrote before CP/M was even a gleam in an engineer’s eye, teach us about building software? One day on LinkedIn Michael…"
+  },
+  {
+    "slug": "people-ware",
+    "title": "👤 People-ware",
+    "publishedAt": "2025-07-03T04:29:00Z",
+    "tags": [
+      "career",
+      "developer-life",
+      "personal-development"
+    ],
+    "excerpt": "I cut my teeth in the software development industry just as the dot com bubble was beginning to burst. I’ve learned from some of my mistakes and also at times repeated them. In a…"
+  },
+  {
+    "slug": "reading-tips",
+    "title": "📕 Reading Tips",
+    "publishedAt": "2025-06-29T19:35:00Z",
+    "tags": [
+      "personal-development",
+      "books",
+      "reading"
+    ],
+    "excerpt": "At some point earlier this year I realized that I’m not too far off from reaching 2,000 books on my “Books I’ve Read” list. If someone asked me “how’d you do it?” I’d jokingly…"
+  }
+]

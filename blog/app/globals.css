@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/* Design tokens shared with marknenadov.com. */
+@theme {
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.5;
+  --text-xs--letter-spacing: 0.025em;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.5;
+  --text-sm--letter-spacing: 0.025em;
+  --text-base: 1rem;
+  --text-base--line-height: 1.6;
+  --text-base--letter-spacing: 0.015em;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.6;
+  --text-lg--letter-spacing: 0.015em;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.5;
+  --text-xl--letter-spacing: 0.015em;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 1.4;
+  --text-2xl--letter-spacing: 0.005em;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 1.3;
+  --text-3xl--letter-spacing: 0;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 1.2;
+  --text-4xl--letter-spacing: -0.025em;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1.1;
+  --text-5xl--letter-spacing: -0.025em;
+
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #f8fafc;
+  --color-surface-tertiary: #f1f5f9;
+
+  --color-border-primary: #e2e8f0;
+  --color-border-secondary: #cbd5e1;
+  --color-border-tertiary: #94a3b8;
+
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-inverse: #ffffff;
+
+  --shadow-soft: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
+  --shadow-soft-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+  --shadow-elegant: 0 4px 20px -2px rgba(0, 0, 0, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  --shadow-elegant-lg: 0 8px 30px -4px rgba(0, 0, 0, 0.08), 0 4px 12px -4px rgba(0, 0, 0, 0.04);
+
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.25rem;
+
+  --animate-fade-in-up: fade-in-up 0.4s ease-out;
+
+  @keyframes fade-in-up {
+    0% { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@utility link-text {
+  @apply font-medium text-primary-700 underline transition-colors hover:text-primary-600;
+}
+
+@utility card-surface {
+  @apply rounded-2xl border border-border-primary bg-surface-primary shadow-soft-lg;
+}
+
+/* Typography for imported post bodies, which arrive as plain HTML. */
+.post-body {
+  @apply text-lg text-text-secondary;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.post-body > * + * {
+  margin-top: 1.25em;
+}
+
+.post-body h2,
+.post-body h3 {
+  @apply font-semibold text-text-primary;
+  margin-top: 2em;
+  scroll-margin-top: 1.5rem;
+}
+
+.post-body h2 {
+  @apply text-2xl;
+}
+
+.post-body h3 {
+  @apply text-xl;
+}
+
+.post-body > :first-child {
+  margin-top: 0;
+}
+
+.post-body strong {
+  @apply font-semibold text-text-primary;
+}
+
+.post-body a:not(.anchor) {
+  @apply link-text;
+}
+
+.post-body .anchor {
+  display: none;
+}
+
+.post-body ul,
+.post-body ol {
+  padding-left: 1.5em;
+}
+
+.post-body ul {
+  list-style: disc;
+}
+
+.post-body ol {
+  list-style: decimal;
+}
+
+.post-body li + li {
+  margin-top: 0.5em;
+}
+
+.post-body li > p + p {
+  margin-top: 0.75em;
+}
+
+.post-body blockquote {
+  @apply border-l-4 border-primary-200 text-text-primary;
+  padding-left: 1.25em;
+  font-style: italic;
+}
+
+.post-body pre {
+  @apply overflow-x-auto rounded-xl border border-border-primary bg-surface-tertiary text-sm text-text-primary;
+  line-height: 1.6;
+  padding: 1em 1.25em;
+}
+
+.post-body img {
+  @apply rounded-2xl shadow-elegant;
+  display: block;
+  height: auto;
+  margin-inline: auto;
+  max-width: min(100%, 22rem);
+}

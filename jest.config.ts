@@ -15,6 +15,9 @@ const config: Config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
+  // The blog is a separate app with its own test runner
+  testPathIgnorePatterns: ["/blog/"],
+
   // Stop running tests after `n` failures
   // bail: 0,
 

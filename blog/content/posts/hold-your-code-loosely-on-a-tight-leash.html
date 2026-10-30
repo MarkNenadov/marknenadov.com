@@ -1,0 +1,30 @@
+<h3 id="take-ownership"><a href="#take-ownership" class="anchor" aria-label="Link to this section"></a>Take Ownership</h3>
+<p>Developers should take deep ownership over their code. We should strive for a high level of personal stake in what we deploy. A little pride in our craft is quite appropriate.</p>
+<h3 id="but-some-detachment-is-good"><a href="#but-some-detachment-is-good" class="anchor" aria-label="Link to this section"></a>But Some Detachment Is Good</h3>
+<p>However, some types of pride lead to a fall. Over-investment in the ownership of our code is problematic. I’m thinking of what could be termed “white-knuckled ownership”.</p>
+<p><a href="/a-time-to-tear-down-what-can-solomon-teach-software-engineers">As I’ve written before</a>: we should avoid precious sentimentality in the way we own our code. It will cause us lots of problems.</p>
+<p>Hold your code loosely. Don’t take it too seriously. It can be terrible without that being a scathing judgement on you as an individual. It can and will be deprecated someday. Someone will cringe at it and delete it, likely even your future self.</p>
+<h3 id="a-tight-leash-ties-together-ownership-and-detachment"><a href="#a-tight-leash-ties-together-ownership-and-detachment" class="anchor" aria-label="Link to this section"></a>A Tight Leash Ties Together Ownership and Detachment</h3>
+<p>We deeply own our code, but a tight leash keeps our sentimentality in check. The tight leash ties the two things together.</p>
+<p>The leash shouldn’t be luxurious. Be an overbearing micromanager of your code’s scope. It should feel the daunting shadow of our delete button.</p>
+<h3 id="legacy-code-migrations-iterative-cleanup-on-the-roadmap"><a href="#legacy-code-migrations-iterative-cleanup-on-the-roadmap" class="anchor" aria-label="Link to this section"></a>Legacy Code Migrations: Iterative Cleanup on the Roadmap</h3>
+<p>One of the ways this applies is in migrations away from legacy code. We can easily place too much trust in the code we’re migrating away from, or following the metaphor I’ve been using, we give it too long of a leash.</p>
+<p>Aan iterative approach in building things is popular. And yet on the unbuilding side we’re often too content to do “big bang deletes” sometime in the future. When we get to them at all, that is. Why not also use an iterative approach in tearing things down?</p>
+<p>In that vein we aim for a tight feedback loop of small victories of “we’ve migrated xyz, we’ll clean up xyz now”. The key principle here is that cleanup is too important to throw it into a “well, yeah, we might do that someday” pile.</p>
+<p>Making iterative cleanup a part of the roadmap requires a mindset shift away from letting old code survive by default until some future cooldown period. It requires surfacing intentional and early questions like: “Is there any pressing reason we can’t delete this yet?”</p>
+<h3 id="risks-and-rewards"><a href="#risks-and-rewards" class="anchor" aria-label="Link to this section"></a>Risks And Rewards</h3>
+<p>Are there risks in getting rid of something too soon? Sure. However, the fear of that possibility can become a Trojan horse that tricks us into letting old code live far too long. Risk should push us to prudent action, not inaction.</p>
+<p>Most often, the risks of removing something “too soon” are more than compensated for by the rewards of being a bit more bold and ensuring it gets removed.</p>
+<p>Here are some rewards you may reap through a bias toward action in this area:</p>
+<ul>
+<li>Psychological Commitment: By removing the “quick revert path” when the time is right, we are psychologically and operationally committing to the new code. This helps bubble up the gaps and forge a path to trusting the new code sooner. Sometimes to move forward you need to drop the security blanket and take off the training wheels.</li>
+<li>Accelerate The Detangling: Committing to removal earlier also tends to bring the blockers and interdependencies out of the woodwork, whereas inaction tends to hide them, leading to more risk.</li>
+<li>Reduced Cognitive Load: Reduced cognitive load and amount of code required to be analyzed in the next phases of the migration. Effectively, you are pulling some of those future gains into the present.</li>
+<li>Bug Reduction: Reduction of the surface area for bugs and the vast expanse of complexity that would hide such bugs.</li>
+<li>Security Gains: Reduction of the attack surface of legacy and possibly poorly understood and untrusted code.</li>
+</ul>
+<h3 id="conclusion"><a href="#conclusion" class="anchor" aria-label="Link to this section"></a>Conclusion</h3>
+<p>I’m not advocating for ‘cowboy deletes’ where we rashly remove things we’re not sure about. Instead, this is about aligning processes around a strong commitment that old code shouldn’t live by default.</p>
+<p>Ensure decisions to keep the old code are very intentional and, ideally, time-boxed. One way to accomplish this is by asking the question “Are we at the point where we can get rid of this?” early and, if necessary, often.</p>
+<p>Risks are required to reap the reward and there will be times where we “jump the gun”, but we can minimize these cases through due diligence. The decision to pass a “point of no return” should be discussed with your team. Consult key stakeholders and get consensus, but also weigh the often hidden costs of being too hesitant or waiting for excessive formality before acting.</p>
+<p>A short cleanup feedback loop may be one of the most underrated ingredients in successful migrations. Codebases that are clean, easy to understand, reliable, and secure don’t happen by accident. They happen when we own our code, hold it loosely, but keep it on a short leash.</p>

@@ -18,6 +18,8 @@ This project uses **Bun** as the package manager (not npm/yarn):
 
 **marknenadov.com** is a Next.js 15 personal portfolio site using the App Router pattern with TypeScript and Tailwind CSS.
 
+The **`blog/`** folder is a separate, self-contained Next.js app (blog.marknenadov.com) with its own dependencies, tests, and Vercel project. Run its commands from inside that folder; see `blog/README.md`.
+
 ### Key Directories
 
 - **`app/Components/`** - React components organized by type:

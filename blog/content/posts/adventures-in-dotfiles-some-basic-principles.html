@@ -1,0 +1,63 @@
+<h2 id="introduction"><a href="#introduction" class="anchor" aria-label="Link to this section"></a>Introduction</h2>
+<p>Having previously shared some thoughts about the culture surrounding dotfiles repos in <a href="/the-joys-of-dotfiles">The Joys Of Dotfiles</a>, I figure it is about time I write something about <a href="https://github.com/marknenadov/mac-dotfiles">my own dotfiles</a>.</p>
+<p>I’ve had a GitHub-hosted Mac dotfiles repo since 2023. While it’s unlikely to wow anyone, I take a lot of joy in steadily refining it over time.</p>
+<p>I wanted to share some basic principles (both actualized and aspirational).</p>
+<h3 id="me-first"><a href="#me-first" class="anchor" aria-label="Link to this section"></a>Me First</h3>
+<p>I would be delighted if others find utility in my dotfiles. That, of course, is the reason I’ve published them as opposed to keeping them private. However, their structure, outlook, and approach fundamentally cater to my preferences and needs.</p>
+<h3 id="avoid-assumptions-or-enforce-them"><a href="#avoid-assumptions-or-enforce-them" class="anchor" aria-label="Link to this section"></a>Avoid Assumptions or Enforce Them</h3>
+<p>I want to prevent the first principle (“me first”) from smuggling in too many environmental assumptions even to the detriment of my purposes. I believe eliminating (or reducing) assumptions is a clear win for anyone who might use these scripts.</p>
+<p>Generally, I try to add tripwires that short-circuit things if an important assumption is not true (ie., the require_macos function).</p>
+<h3 id="functions-over-aliases"><a href="#functions-over-aliases" class="anchor" aria-label="Link to this section"></a>Functions Over Aliases</h3>
+<p>While aliases have their value (and I use them frequently), as time goes on I find myself replacing complex aliases with zsh functions.</p>
+<p>Functions allow for parameter validation, usage messages, and sanity checks: things aliases can’t provide.</p>
+<p>Here are some examples of former aliases that have become functions for various reasons</p>
+<pre><code>function flushdns() {
+    require_macos || return 1
+    sudo dscacheutil -flushcache; 
+    sudo killall -HUP mDNSResponder   
+}
+
+function guessos() {
+    if [[ $# -eq 0 ]]; then
+        echo "Error: No ip address specified. Usage: guessos &lt;ip_address&gt;"
+        return 1
+    fi
+
+    sudo nmap -O $1
+}
+</code></pre>
+<h3 id="clear-conflicts-proactively"><a href="#clear-conflicts-proactively" class="anchor" aria-label="Link to this section"></a>Clear Conflicts Proactively</h3>
+<p>I think there’s something to be said for generally being very explicit about “clearing the field” for what you are about to define.</p>
+<p>Here’s a concrete example: Explicitly unalias a function name before defining it.</p>
+<p>Overriding an alias with a function is sort of a weird thing with weird dynamics. I prefer to ensure I’m not walking into these sort of weird situations and I think it pays off in the long run.</p>
+<p>For this purpose, I made a function, which unaliases silently (since the alias <em>probably</em> won’t exist):</p>
+<pre><code>function silent_unalias() {
+  if [[ $# -eq 0 || -z "$1" ]]; then
+    echo "Usage: silent_unalias &lt;alias_name&gt;" &gt;&amp;2
+    return 1
+  fi
+  
+  unalias "$1" 2&gt;/dev/null
+}
+</code></pre>
+<p>This may seem pedantic or over the top to some, but I think it’s a justified precaution.</p>
+<h3 id="break-things-down"><a href="#break-things-down" class="anchor" aria-label="Link to this section"></a>Break Things Down</h3>
+<p>This is just basic modularity. I am a fan of having a small .zshrc that fits on one screen. Then you can mass include a zsh folder like so:</p>
+<pre><code>for module in ~/.zsh/*.zsh; do
+	source "$module"
+done
+</code></pre>
+<p>This allows me to split off aliases into their own file and also institute some broad over-arching categories for the functions I’m introducing (for instance: networking, file system, etc.)</p>
+<h3 id="invest-in-the-installer"><a href="#invest-in-the-installer" class="anchor" aria-label="Link to this section"></a>Invest In The Installer</h3>
+<p>Though mine isn’t quite where I want it yet, I’ve made some strides in improving the installer. The time I’ve taken to tweak and improve my installer has paid a good return in terms of making my dotfiles a delight to work with.</p>
+<p>I personally like to split the phases into functions, for example:</p>
+<ul>
+<li>do_brew (silly name, but I just had to…)</li>
+<li>link_dotfiles</li>
+<li>install_language_runtimes</li>
+<li>etc.</li>
+</ul>
+<p>A good installer script should be safe, repeatable, and fast, which makes working with dotfiles over time genuinely enjoyable.</p>
+<h3 id="conclusion"><a href="#conclusion" class="anchor" aria-label="Link to this section"></a>Conclusion</h3>
+<p>What do you think? I’d love to hear how others are managing their own setup — feel free to share ideas or links!</p>
+<p>I’ll continue iterating on these files over time, but hopefully some of these practices give you ideas for your own setup. I’ll likely post some further thoughts at some point. Happy hacking.</p>

@@ -1,0 +1,34 @@
+<p>My mac dotfiles installer has a dry run flag.</p>
+<p>I’ve added some new features since I originally implemented it, so I wanted to be able to easily/programatically determine that my dry run is actually staying dry (not changing anything).</p>
+<p>What I did was make a simple sandbox config (dryrun.sb)</p>
+<pre><code>(version 1)
+
+(deny default)
+
+(allow process-exec)
+(allow process-fork)
+(allow file-read*)
+</code></pre>
+<p>Then I ran my shell script through <a href="https://igorstechnoclub.com/sandbox-exec/">sandbox-exec</a> like so:</p>
+<pre><code>sandbox-exec -f dryrun.sb ./install.sh --dry-run
+</code></pre>
+<p>But that was a bit too strict and it was silently failing.</p>
+<p>It turns out some other permissions are necessary to run your typical shell script and Claude was really helpful in sorting that out, since the output was not giving any clues.</p>
+<p>Here is the final version of the config:</p>
+<pre><code>(version 1)
+
+(deny default)
+
+(allow process-exec)
+(allow process-fork)
+(allow file-read*)
+(allow file-write* (literal "/dev/stdout"))
+(allow file-write* (literal "/dev/stderr"))
+(allow system-info)
+(allow sysctl-read)
+</code></pre>
+<p>Voila, the dryrun runs successfully if my script obeys the sandbox rules, otherwise it errors out if the script attempts to write.</p>
+<p>You may need to add further allows depending on what the shell script in question is attempting. You can also make the write protection more nuanced by allowing certain writes:</p>
+<pre><code>   (allow file-write* (subpath "/var/tmp"))
+</code></pre>
+<p>There might be a better way to do this, but I thought it was fairly clever.</p>

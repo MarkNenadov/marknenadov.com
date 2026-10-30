@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* The blog is a separate app; keep its classes out of this site's CSS. */
+@source not "../blog";
+
 @theme {
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.5;
