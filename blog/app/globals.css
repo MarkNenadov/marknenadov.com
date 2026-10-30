@@ -217,12 +217,16 @@
 }
 
 .post-body blockquote {
+  background-color: color-mix(in srgb, var(--color-accent) 7%, transparent);
   border-left: 2px solid var(--color-accent);
-  color: var(--color-ink);
-  font-size: 1.08em;
-  letter-spacing: -0.012em;
-  line-height: 1.55;
-  padding-left: 1.1em;
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  line-height: 1.6;
+  padding: 0.85em 1.1em;
+}
+
+.post-body blockquote > p + p {
+  margin-top: 0.8em;
 }
 
 .post-body hr {

@@ -9,6 +9,7 @@ import { SiteHeader } from './Components/SiteHeader';
 const inter = Inter({
   subsets: ['latin'],
   axes: ['opsz'],
+  style: ['normal', 'italic'],
   variable: '--font-inter',
 });
 
