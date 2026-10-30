@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
 import { getAllTags } from '@/lib/posts';
-import { BackToPostsLink } from '../Components/BackToPostsLink';
 import { TagList } from '../Components/TagList';
 
 export const metadata: Metadata = { title: 'Tags' };
 
 export default function TagsPage() {
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6">
-      <section className="card-surface p-6 md:p-10">
-        <h1 className="mb-6 text-3xl font-bold md:text-4xl">Tags</h1>
-        <TagList tags={getAllTags()} />
-      </section>
-      <div><BackToPostsLink /></div>
-    </div>
+    <section className="page-narrow pt-12 md:pt-20">
+      <h1 className="border-b border-hairline pb-7 text-[2.5rem] font-semibold leading-[1.05] tracking-[-0.035em] md:pb-9 md:text-[3.25rem]">
+        Tags
+      </h1>
+      <div className="mt-2"><TagList tags={getAllTags()} /></div>
+    </section>
   );
 }

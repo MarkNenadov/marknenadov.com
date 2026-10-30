@@ -18,10 +18,40 @@ export interface Tag {
   readonly count: number;
 }
 
+export interface SplitTitle {
+  readonly emoji: string | undefined;
+  readonly text: string;
+}
+
+export interface AdjacentPosts {
+  readonly newer: Post | undefined;
+  readonly older: Post | undefined;
+}
+
 const POSTS: readonly Post[] = manifest;
+const LEADING_EMOJI = /^(\p{Extended_Pictographic}(?:️|‍\p{Extended_Pictographic})*)\s+(.*)$/su;
 
 export function getAllPosts(): readonly Post[] {
   return POSTS;
+}
+
+export function splitTitle(title: string): SplitTitle {
+  const match = title.match(LEADING_EMOJI);
+  return match ? { emoji: match[1], text: match[2] } : { emoji: undefined, text: title };
+}
+
+export function getAdjacentPosts(slug: string): AdjacentPosts {
+  const index = POSTS.findIndex((post) => post.slug === slug);
+  return { newer: POSTS[index - 1], older: POSTS[index + 1] };
+}
+
+export function formatShortDate(publishedAt: string): string {
+  return new Date(publishedAt).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    timeZone: 'UTC',
+  });
 }
 
 export function getPostBySlug(slug: string): Post | undefined {

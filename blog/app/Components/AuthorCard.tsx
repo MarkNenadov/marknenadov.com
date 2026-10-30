@@ -3,16 +3,16 @@ import { SITE } from '@/lib/site';
 
 export function AuthorCard() {
   return (
-    <aside className="card-surface flex items-start gap-4 p-5">
+    <aside className="flex items-start gap-4">
       <Image
         src="/images/markn.png"
         alt={`${SITE.author} - Professional headshot`}
-        width={80}
-        height={80}
-        className="size-20 shrink-0 rounded-2xl object-cover object-top shadow-elegant"
+        width={112}
+        height={112}
+        className="size-14 shrink-0 rounded-full object-cover object-top"
       />
-      <p className="text-sm leading-relaxed text-text-secondary">
-        {SITE.author} is a Canadian software developer working in
+      <p className="text-[0.9375rem] leading-relaxed text-ink-soft">
+        <span className="font-medium text-ink">{SITE.author}</span> is a Canadian software developer working in
         the fintech industry. He loves feedback. Drop him a line
         through <a className="link-text" href="https://letterbird.co/marknenadov">letterbird</a>.
       </p>

@@ -10,10 +10,10 @@ export function TagPill({ name, count }: TagPillProps) {
     <Link
       href={`/t/${name}`}
       aria-label={`View all posts tagged with ${name}`}
-      className="relative z-10 inline-block rounded-lg border border-border-primary bg-surface-secondary px-2 py-0.5 text-xs font-medium text-text-secondary transition-colors hover:border-primary-300 hover:bg-primary-50 hover:text-primary-700"
+      className="group inline-flex min-h-8 items-center gap-1.5 rounded-full border border-hairline px-3 text-[0.8125rem] text-ink-soft transition-colors hover:border-hairline-strong hover:text-accent"
     >
       {name}
-      {count !== undefined && <span className="ml-1.5 text-text-tertiary">{count}</span>}
+      {count !== undefined && <span className="meta-text transition-colors group-hover:text-accent">{count}</span>}
     </Link>
   );
 }

@@ -1,15 +1,19 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
   estimateReadingMinutes,
   formatPublishedDate,
+  getAdjacentPosts,
   getAllPosts,
   getPostBody,
   getPostBySlug,
+  splitTitle,
 } from '@/lib/posts';
 import { SITE } from '@/lib/site';
 import { AuthorCard } from '../Components/AuthorCard';
-import { BackToPostsLink } from '../Components/BackToPostsLink';
+import { PostNavigation } from '../Components/PostNavigation';
 import { TagPill } from '../Components/TagPill';
 
 interface PostPageProps {
@@ -29,12 +33,13 @@ export async function generateMetadata({ params }: PostPageProps): Promise<Metad
     return {};
   }
   const { title, excerpt, publishedAt, tags } = post;
+  const { text } = splitTitle(title);
   return {
-    title,
+    title: text,
     description: excerpt,
     alternates: { canonical: `/${slug}` },
     openGraph: {
-      title,
+      title: text,
       description: excerpt,
       type: 'article',
       publishedTime: publishedAt,
@@ -51,25 +56,42 @@ export default async function PostPage({ params }: PostPageProps) {
     notFound();
   }
   const { title, publishedAt, tags } = post;
+  const { emoji, text } = splitTitle(title);
   const body = getPostBody(slug);
 
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-6">
-      <article className="card-surface p-6 md:p-10">
-        <header className="mb-8">
-          <h1 className="text-3xl font-bold md:text-4xl">{title}</h1>
-          <p className="mt-3 text-sm text-text-tertiary">
-            {SITE.author} · <time dateTime={publishedAt}>{formatPublishedDate(publishedAt)}</time>
-            {' · '}{estimateReadingMinutes(body)} min read
-          </p>
+    <div className="page-narrow pt-6 md:pt-12">
+      <Link href="/" className="meta-text inline-block py-2 transition-colors hover:text-accent">← All posts</Link>
+      <article className="mt-6 md:mt-10">
+        <header className="border-b border-hairline pb-7 md:pb-9">
+          {emoji && <div aria-hidden="true" className="mb-4 text-[1.75rem] leading-none md:mb-5 md:text-4xl">{emoji}</div>}
+          <h1 className="text-[2.125rem] font-semibold leading-[1.08] tracking-[-0.032em] text-balance md:text-[3.25rem]">
+            {text}
+          </h1>
+          <div className="mt-6 flex items-center gap-3 md:mt-8">
+            <Image
+              src="/images/markn.png"
+              alt=""
+              width={72}
+              height={72}
+              className="size-9 rounded-full object-cover object-top"
+            />
+            <div>
+              <p className="text-sm font-medium leading-5">{SITE.author}</p>
+              <p className="meta-text">
+                <time dateTime={publishedAt}>{formatPublishedDate(publishedAt)}</time>
+                {' · '}{estimateReadingMinutes(body)} min read
+              </p>
+            </div>
+          </div>
         </header>
-        <div className="post-body" dangerouslySetInnerHTML={{ __html: body }} />
-        <ul aria-label="Post tags" className="mt-8 flex flex-wrap gap-2 border-t border-border-primary pt-6">
+        <div className="post-body mt-7 md:mt-9" dangerouslySetInnerHTML={{ __html: body }} />
+        <ul aria-label="Post tags" className="mt-10 flex flex-wrap gap-2">
           {tags.map((tag) => <li key={tag}><TagPill name={tag} /></li>)}
         </ul>
       </article>
-      <AuthorCard />
-      <div><BackToPostsLink /></div>
+      <div className="mt-10 border-t border-hairline pt-8"><AuthorCard /></div>
+      <div className="mt-8"><PostNavigation {...getAdjacentPosts(slug)} /></div>
     </div>
   );
 }

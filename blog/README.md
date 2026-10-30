@@ -17,4 +17,4 @@ Run these from this folder. The blog is a self-contained app, deployed as its ow
 - `content/posts.json` - post metadata, newest first
 - `content/posts/*.html`, `content/pages/about.html` - post and page bodies
 - `lib/site.ts` - site name and domain, both in one place
-- `app/globals.css` - design tokens shared with marknenadov.com and the post typography
+- `app/globals.css` - color tokens for light and dark mode, and the post typography

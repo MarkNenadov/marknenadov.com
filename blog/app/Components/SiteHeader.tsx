@@ -1,34 +1,26 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { SITE } from '@/lib/site';
-
-const NAV_LINKS = [
-  { href: '/', label: 'Posts' },
-  { href: '/about', label: 'About' },
-  { href: '/tags', label: 'Tags' },
-  { href: '/subscribe', label: 'Subscribe' },
-] as const;
+import { SiteNav } from './SiteNav';
 
 export function SiteHeader() {
   return (
-    <header className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
-      <Link href="/" className="group flex items-center gap-2 text-sm font-semibold">
-        <Image
-          src="/images/markn.png"
-          alt=""
-          width={28}
-          height={28}
-          className="size-7 rounded-lg object-cover object-top"
-        />
-        <span className="text-text-secondary transition-colors group-hover:text-primary-700">{SITE.author}</span>
-        <span aria-hidden="true" className="text-border-tertiary">/</span>
-        <span className="transition-colors group-hover:text-primary-700">{SITE.name}</span>
-      </Link>
-      <nav aria-label="Main navigation" className="flex gap-4 text-sm font-medium text-text-secondary">
-        {NAV_LINKS.map(({ href, label }) => (
-          <Link key={href} className="transition-colors hover:text-primary-700" href={href}>{label}</Link>
-        ))}
-      </nav>
+    <header className="sticky top-0 z-20 border-b border-hairline bg-canvas/80 pt-[env(safe-area-inset-top)] backdrop-blur-xl backdrop-saturate-150">
+      <div className="page-wide flex h-14 items-center justify-between gap-3">
+        <Link href="/" className="group flex min-w-0 items-center gap-2.5 py-2 text-[0.9375rem] font-semibold tracking-[-0.015em] max-[359px]:text-sm">
+          <Image
+            src="/images/markn.png"
+            alt=""
+            width={48}
+            height={48}
+            className="size-6 rounded-full object-cover object-top max-[389px]:hidden"
+          />
+          <span className="hidden text-muted transition-colors group-hover:text-accent sm:inline">{SITE.author}</span>
+          <span aria-hidden="true" className="hidden font-normal text-hairline-strong sm:inline">/</span>
+          <span data-brand-name className="truncate transition-colors group-hover:text-accent">{SITE.name}</span>
+        </Link>
+        <SiteNav />
+      </div>
     </header>
   );
 }

@@ -1,12 +1,29 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
-import type { Metadata } from 'next';
+import { Geist_Mono, Inter } from 'next/font/google';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { SITE } from '@/lib/site';
 import { SiteFooter } from './Components/SiteFooter';
 import { SiteHeader } from './Components/SiteHeader';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  axes: ['opsz'],
+  variable: '--font-inter',
+});
+
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-geist-mono',
+});
+
+export const viewport: Viewport = {
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0f1a' },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -31,21 +48,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en-CA">
-      <body className={`${inter.className} min-h-screen bg-gradient-to-br from-surface-primary to-surface-secondary text-text-primary antialiased`}>
+    <html lang="en-CA" className={`${inter.variable} ${geistMono.variable}`}>
+      <body className="flex min-h-dvh flex-col font-sans">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-lg focus:bg-surface-primary focus:p-2 focus:shadow-elegant"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-30 focus:rounded-lg focus:bg-canvas focus:p-3"
         >
           Skip to main content
         </a>
-        <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-8 p-4 md:p-6">
-          <SiteHeader />
-          <main id="main-content" className="flex-1 animate-fade-in-up motion-reduce:animate-none">
-            {children}
-          </main>
-          <SiteFooter />
-        </div>
+        <SiteHeader />
+        <main id="main-content" className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

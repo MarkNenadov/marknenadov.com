@@ -4,13 +4,61 @@ import { join } from 'node:path';
 import {
   estimateReadingMinutes,
   formatPublishedDate,
+  formatShortDate,
   getAboutHtml,
+  getAdjacentPosts,
   getAllPosts,
   getAllTags,
   getPostBody,
   getPostBySlug,
   getPostsWithTag,
+  splitTitle,
 } from './posts';
+
+describe('splitTitle', () => {
+  test.each([
+    ['📕 Books From 2025', '📕', 'Books From 2025'],
+    ['😮‍💨 On REST and Its Alternatives', '😮‍💨', 'On REST and Its Alternatives'],
+    ['♦️ Ruby Intensifies', '♦️', 'Ruby Intensifies'],
+    ['🏛 The Ancient of Datas', '🏛', 'The Ancient of Datas'],
+  ])('separates the leading emoji from %s', (title, emoji, text) => {
+    expect(splitTitle(title)).toEqual({ emoji, text });
+  });
+
+  test('handles titles with no leading emoji', () => {
+    expect(splitTitle('2025: Its Perils')).toEqual({ emoji: undefined, text: '2025: Its Perils' });
+  });
+
+  test('every archived title has its emoji separated', () => {
+    getAllPosts().forEach(({ title }) => expect(splitTitle(title).emoji).toBeDefined());
+  });
+});
+
+describe('getAdjacentPosts', () => {
+  test('the newest post has only an older neighbour', () => {
+    const { newer, older } = getAdjacentPosts('books-from-2025');
+    expect(newer).toBeUndefined();
+    expect(older?.slug).toBe('how-to-remember-what-year-you-are-in');
+  });
+
+  test('a middle post has both neighbours', () => {
+    const { newer, older } = getAdjacentPosts('how-to-remember-what-year-you-are-in');
+    expect(newer?.slug).toBe('books-from-2025');
+    expect(older?.slug).toBe('on-rest-and-its-alternatives');
+  });
+
+  test('the oldest post has only a newer neighbour', () => {
+    const { newer, older } = getAdjacentPosts('reading-tips');
+    expect(newer?.slug).toBe('people-ware');
+    expect(older).toBeUndefined();
+  });
+});
+
+describe('formatShortDate', () => {
+  test('uses an abbreviated month without punctuation, in UTC', () => {
+    expect(formatShortDate('2025-07-03T04:29:00Z')).toBe('Jul 3, 2025');
+  });
+});
 
 describe('getAllPosts', () => {
   test('returns all 19 archived posts, newest first', () => {

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { SOCIAL_ICON_PATHS } from './socialIconPaths';
 
 const SOCIAL_MEDIA_LINKS = [
   { title: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/MarkNenadov' },
@@ -9,23 +9,20 @@ const SOCIAL_MEDIA_LINKS = [
 
 export function SocialMediaLinks() {
   return (
-    <ul className="flex flex-row justify-center gap-8">
+    <ul className="flex items-center">
       {SOCIAL_MEDIA_LINKS.map(({ title, icon, href }) => (
-        <li key={title} className="hover:invert">
+        <li key={title}>
           <a
             href={href}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${title} profile`}
+            title={title}
+            className="flex size-11 items-center justify-center text-muted transition-colors hover:text-ink"
           >
-            <Image
-              src={`/images/social/${icon}.png`}
-              width={24}
-              height={24}
-              alt=""
-              title={title}
-              className="opacity-70"
-            />
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="size-[1.125rem] fill-current">
+              <path d={SOCIAL_ICON_PATHS[icon]} />
+            </svg>
           </a>
         </li>
       ))}

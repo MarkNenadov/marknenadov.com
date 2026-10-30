@@ -2,30 +2,41 @@ import Link from 'next/link';
 import { getAllPosts, getAllTags } from '@/lib/posts';
 import { SITE } from '@/lib/site';
 import { AuthorCard } from './Components/AuthorCard';
-import { Card } from './Components/Card';
 import { PostList } from './Components/PostList';
-import { SocialMediaLinks } from './Components/SocialMediaLinks';
-import { TagList } from './Components/TagList';
+import { TagPill } from './Components/TagPill';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-8">
-      <header className="space-y-4 py-4 text-center">
-        <h1 className="text-5xl font-bold md:text-6xl">{SITE.name}</h1>
-        <p className="text-xl text-gray-600">{SITE.description}</p>
-        <SocialMediaLinks />
+    <div className="page-wide">
+      <header className="border-b border-hairline pb-10 pt-12 md:pb-16 md:pt-24">
+        <h1 className="text-[clamp(3.25rem,14.5vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.045em] text-balance">
+          {SITE.name}
+        </h1>
+        <p className="mt-5 max-w-2xl text-lg leading-snug tracking-[-0.016em] text-ink-soft text-pretty md:mt-7 md:text-2xl">
+          {SITE.description}
+        </p>
+        <p className="meta-text mt-5 md:mt-7">By {SITE.author}</p>
       </header>
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_20rem]">
+      <div className="grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-20">
         <PostList posts={getAllPosts()} />
-        <div className="flex flex-col gap-6">
-          <AuthorCard />
-          <Card title="🏷 Tags">
-            <TagList tags={getAllTags()} />
-          </Card>
-          <Card title="📡 Subscribe">
-            Follow along with <Link className="link-text" href="/subscribe">RSS, Atom, or JSON Feed</Link>.
-          </Card>
-        </div>
+        <aside className="flex flex-col gap-10 border-t border-hairline pt-10 lg:sticky lg:top-14 lg:self-start lg:border-t-0 lg:py-9">
+          <section>
+            <h2 className="eyebrow mb-4">About the author</h2>
+            <AuthorCard />
+          </section>
+          <section>
+            <h2 className="eyebrow mb-4">Tags</h2>
+            <ul className="flex flex-wrap gap-2">
+              {getAllTags().map(({ name, count }) => <li key={name}><TagPill name={name} count={count} /></li>)}
+            </ul>
+          </section>
+          <section>
+            <h2 className="eyebrow mb-3">Subscribe</h2>
+            <p className="text-[0.9375rem] leading-relaxed text-ink-soft">
+              Follow along with <Link className="link-text" href="/subscribe">RSS, Atom, or JSON Feed</Link>.
+            </p>
+          </section>
+        </aside>
       </div>
     </div>
   );

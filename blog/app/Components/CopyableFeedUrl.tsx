@@ -20,18 +20,18 @@ export function CopyableFeedUrl({ label, path, url }: CopyableFeedUrlProps) {
   }
 
   return (
-    <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+    <div className="flex items-center justify-between gap-4 py-4">
       <div className="min-w-0">
-        <div className="font-semibold text-text-primary">{label}</div>
-        <a className="link-text break-all font-mono text-xs" href={path}>{url}</a>
+        <a href={path} className="block py-1 font-medium tracking-[-0.015em] transition-colors hover:text-accent">{label}</a>
+        <p className="meta-text [overflow-wrap:anywhere]">{url.replace('https://', '')}</p>
       </div>
       <button
         type="button"
         onClick={copyUrl}
         aria-label={`Copy ${label} URL`}
-        className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 shadow-sm transition-all duration-200 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900"
+        className="min-h-9 w-[4.5rem] shrink-0 rounded-full border border-hairline text-[0.8125rem] font-medium transition-colors hover:border-hairline-strong hover:bg-surface active:bg-surface"
       >
-        <span aria-live="polite">{isCopied ? '✓ Copied' : 'Copy'}</span>
+        <span aria-live="polite">{isCopied ? 'Copied' : 'Copy'}</span>
       </button>
     </div>
   );
