@@ -8,7 +8,7 @@ export function SiteFooter() {
       <div className="page-wide flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-semibold tracking-[-0.015em]">{SITE.name}</p>
-          <p className="mt-1 text-sm text-muted">Built with Next.js and Tailwind CSS.</p>
+          <p className="mt-1 text-sm text-muted">{SITE.description}</p>
         </div>
         <div className="-ml-3 flex items-center md:ml-0 md:-mr-3">
           <SocialMediaLinks />
