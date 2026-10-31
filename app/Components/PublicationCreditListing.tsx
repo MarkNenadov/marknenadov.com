@@ -12,7 +12,7 @@ export default function PublicationCreditListing() {
         <Card title="✍️ Publications">
             <Card.Content>
                 <p className="text-text-secondary leading-relaxed text-sm">
-                    I&apos;ve published articles and poetry. See <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
+                    I&apos;ve published articles and poetry. See <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://blog.marknenadov.com">my software development blog</a> or <a className="underline text-primary-700 hover:text-primary-600 transition-colors font-medium" href="https://independent.academia.edu/MarkNenadov">Academia.edu</a>.
                 </p>
             </Card.Content>
             

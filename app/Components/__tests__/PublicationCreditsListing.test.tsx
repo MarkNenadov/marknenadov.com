@@ -6,7 +6,14 @@ describe('PublicationCreditListing', () => {
     it('renders without crashing', () => {
       render(<PublicationCreditListing />);
     });
-  
+
+    it('links to the blog and Academia.edu', () => {
+      render(<PublicationCreditListing />);
+
+      expect(screen.getByRole('link', { name: 'my software development blog' })).toHaveAttribute('href', 'https://blog.marknenadov.com');
+      expect(screen.getByRole('link', { name: 'Academia.edu' })).toHaveAttribute('href', 'https://independent.academia.edu/MarkNenadov');
+    });
+
     it('toggles TechnicalReviewsModal on button click', () => {
       const { getByText } = render(<PublicationCreditListing />);
       
