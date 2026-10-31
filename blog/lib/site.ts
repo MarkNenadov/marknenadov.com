@@ -5,4 +5,8 @@ export const SITE = {
   description: 'Thoughts on software development and things adjacent.',
   author: 'Mark Nenadov',
   authorUrl: 'https://marknenadov.com',
+  epigraph: {
+    quote: 'The world will never starve for want of wonders; but only for want of wonder.',
+    attribution: 'G.K. Chesterton',
+  },
 } as const;

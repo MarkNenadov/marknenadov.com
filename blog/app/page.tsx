@@ -16,6 +16,10 @@ export default function Home() {
           {SITE.description}
         </p>
         <p className="meta-text mt-5 md:mt-7">By {SITE.author}</p>
+        <figure className="mt-8 max-w-xl md:mt-10">
+          <blockquote className="text-[0.9375rem] italic leading-relaxed text-ink-soft text-pretty">{SITE.epigraph.quote}</blockquote>
+          <figcaption className="meta-text mt-1.5">{SITE.epigraph.attribution}</figcaption>
+        </figure>
       </header>
       <div className="grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-20">
         <PostList posts={getAllPosts()} />
