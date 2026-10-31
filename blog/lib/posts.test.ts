@@ -113,6 +113,16 @@ describe('getPostsWithTag', () => {
   });
 });
 
+describe('getAboutHtml', () => {
+  test('quotes Chesterton on wonder between the Wondering and Willow definitions', () => {
+    const about = getAboutHtml();
+    const quote = about.indexOf('<blockquote><p>The world will never starve for want of wonders; but only for want of wonder.</p>');
+    expect(about).toContain('<p>— G.K. Chesterton</p></blockquote>');
+    expect(quote).toBeGreaterThan(about.indexOf('<p>“Wondering”</p>'));
+    expect(quote).toBeLessThan(about.indexOf('<p>“Willow”</p>'));
+  });
+});
+
 describe('content integrity', () => {
   const pageBodies = [...getAllPosts().map(({ slug }) => getPostBody(slug)), getAboutHtml()];
 
