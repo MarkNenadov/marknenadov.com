@@ -1,8 +1,11 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 import manifest from '../content/posts.json';
+import { parseMarkdownPost, renderMarkdown, type MarkdownPost } from './markdownPost';
 
 const CONTENT_DIR = join(process.cwd(), 'content');
+const POSTS_DIR = join(CONTENT_DIR, 'posts');
+const MARKDOWN_EXTENSION = '.md';
 const WORDS_PER_MINUTE = 200;
 
 export interface Post {
@@ -28,7 +31,35 @@ export interface AdjacentPosts {
   readonly older: Post | undefined;
 }
 
-const POSTS: readonly Post[] = manifest;
+export function sortNewestFirst(posts: readonly Post[]): readonly Post[] {
+  return [...posts].sort(
+    (first, second) => second.publishedAt.localeCompare(first.publishedAt) || first.slug.localeCompare(second.slug),
+  );
+}
+
+export function assertUniqueSlugs(posts: readonly Post[]): readonly Post[] {
+  const duplicate = posts.find(({ slug }, index) => posts.findIndex((post) => post.slug === slug) !== index);
+  if (duplicate) {
+    throw new Error(`Two posts use the address "${duplicate.slug}"`);
+  }
+  return posts;
+}
+
+function markdownPostPath(slug: string): string {
+  return join(POSTS_DIR, `${slug}${MARKDOWN_EXTENSION}`);
+}
+
+function readMarkdownPost(slug: string): MarkdownPost {
+  return parseMarkdownPost(slug, readFileSync(markdownPostPath(slug), 'utf8'));
+}
+
+function readMarkdownPosts(): readonly Post[] {
+  return readdirSync(POSTS_DIR)
+    .filter((fileName) => fileName.endsWith(MARKDOWN_EXTENSION))
+    .map((fileName) => readMarkdownPost(basename(fileName, MARKDOWN_EXTENSION)).post);
+}
+
+const POSTS = sortNewestFirst(assertUniqueSlugs([...manifest, ...readMarkdownPosts()]));
 const LEADING_EMOJI = /^(\p{Extended_Pictographic}(?:️|‍\p{Extended_Pictographic})*)\s+(.*)$/su;
 
 export function getAllPosts(): readonly Post[] {
@@ -59,7 +90,9 @@ export function getPostBySlug(slug: string): Post | undefined {
 }
 
 export function getPostBody(slug: string): string {
-  return readFileSync(join(CONTENT_DIR, 'posts', `${slug}.html`), 'utf8');
+  return existsSync(markdownPostPath(slug))
+    ? renderMarkdown(readMarkdownPost(slug).markdown)
+    : readFileSync(join(POSTS_DIR, `${slug}.html`), 'utf8');
 }
 
 export function getAboutHtml(): string {

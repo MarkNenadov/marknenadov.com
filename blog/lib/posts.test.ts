@@ -2,6 +2,7 @@ import { describe, expect, test } from 'bun:test';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import {
+  assertUniqueSlugs,
   estimateReadingMinutes,
   formatPublishedDate,
   formatShortDate,
@@ -12,6 +13,7 @@ import {
   getPostBody,
   getPostBySlug,
   getPostsWithTag,
+  sortNewestFirst,
   splitTitle,
 } from './posts';
 
@@ -28,29 +30,48 @@ describe('splitTitle', () => {
   test('handles titles with no leading emoji', () => {
     expect(splitTitle('2025: Its Perils')).toEqual({ emoji: undefined, text: '2025: Its Perils' });
   });
-
-  test('every archived title has its emoji separated', () => {
-    getAllPosts().forEach(({ title }) => expect(splitTitle(title).emoji).toBeDefined());
-  });
 });
 
 describe('getAdjacentPosts', () => {
+  const slugs = getAllPosts().map(({ slug }) => slug);
+
   test('the newest post has only an older neighbour', () => {
-    const { newer, older } = getAdjacentPosts('books-from-2025');
+    const { newer, older } = getAdjacentPosts(slugs[0]);
     expect(newer).toBeUndefined();
-    expect(older?.slug).toBe('how-to-remember-what-year-you-are-in');
+    expect(older?.slug).toBe(slugs[1]);
   });
 
   test('a middle post has both neighbours', () => {
-    const { newer, older } = getAdjacentPosts('how-to-remember-what-year-you-are-in');
-    expect(newer?.slug).toBe('books-from-2025');
-    expect(older?.slug).toBe('on-rest-and-its-alternatives');
+    const { newer, older } = getAdjacentPosts(slugs[1]);
+    expect(newer?.slug).toBe(slugs[0]);
+    expect(older?.slug).toBe(slugs[2]);
   });
 
   test('the oldest post has only a newer neighbour', () => {
-    const { newer, older } = getAdjacentPosts('reading-tips');
-    expect(newer?.slug).toBe('people-ware');
+    const { newer, older } = getAdjacentPosts(slugs[slugs.length - 1]);
+    expect(newer?.slug).toBe(slugs[slugs.length - 2]);
     expect(older).toBeUndefined();
+  });
+});
+
+describe('sortNewestFirst', () => {
+  const post = (slug: string, publishedAt: string) => ({ slug, publishedAt, title: slug, excerpt: '', tags: [] });
+
+  test('orders by date, newest first, whatever the source order', () => {
+    const sorted = sortNewestFirst([post('old', '2025-01-01T12:00:00Z'), post('new', '2026-10-31T12:00:00Z')]);
+    expect(sorted.map(({ slug }) => slug)).toEqual(['new', 'old']);
+  });
+
+  test('breaks same-day ties by slug so the order is stable', () => {
+    const sorted = sortNewestFirst([post('b', '2026-10-31T12:00:00Z'), post('a', '2026-10-31T12:00:00Z')]);
+    expect(sorted.map(({ slug }) => slug)).toEqual(['a', 'b']);
+  });
+});
+
+describe('assertUniqueSlugs', () => {
+  test('rejects two posts with the same address', () => {
+    const post = { slug: 'same', publishedAt: '2026-10-31T12:00:00Z', title: 'T', excerpt: '', tags: [] };
+    expect(() => assertUniqueSlugs([post, post])).toThrow('same');
   });
 });
 
@@ -61,12 +82,11 @@ describe('formatShortDate', () => {
 });
 
 describe('getAllPosts', () => {
-  test('returns all 19 archived posts, newest first', () => {
+  test('returns every post, newest first', () => {
     const posts = getAllPosts();
     const dates = posts.map(({ publishedAt }) => publishedAt);
-    expect(posts).toHaveLength(19);
+    expect(posts.length).toBeGreaterThanOrEqual(19);
     expect(dates).toEqual([...dates].sort().reverse());
-    expect(posts[0].slug).toBe('books-from-2025');
   });
 });
 
@@ -80,19 +100,16 @@ describe('getPostBySlug', () => {
 describe('getAllTags', () => {
   test('counts posts per tag and sorts alphabetically', () => {
     const tags = getAllTags();
-    expect(tags).toHaveLength(19);
     expect(tags.map(({ name }) => name)).toEqual(tags.map(({ name }) => name).sort());
-    expect(tags.find(({ name }) => name === 'developer-life')?.count).toBe(7);
+    tags.forEach(({ name, count }) => expect(count).toBe(getPostsWithTag(name).length));
   });
 });
 
 describe('getPostsWithTag', () => {
   test('returns only posts with that tag', () => {
-    expect(getPostsWithTag('ai').map(({ slug }) => slug)).toEqual([
-      'how-to-remember-what-year-you-are-in',
-      'a-mental-model-for-understanding-llm-limitations',
-      '2025-its-perils-and-prospects',
-    ]);
+    const posts = getPostsWithTag('ai');
+    expect(posts.map(({ slug }) => slug)).toContain('a-mental-model-for-understanding-llm-limitations');
+    posts.forEach(({ tags }) => expect(tags).toContain('ai'));
   });
 });
 
@@ -102,7 +119,7 @@ describe('content integrity', () => {
   test('no body still references the defunct platform or its archive paths', () => {
     pageBodies.forEach((body) => {
       expect(body).not.toMatch(/active_storage|_next\/image|trix-content|wondering\.willow\.camp/);
-      expect(body).not.toMatch(/href="[^"]*\.html/);
+      expect(body).not.toMatch(/href="(?!https?:)[^"]*\.html/);
     });
   });
 
@@ -115,11 +132,12 @@ describe('content integrity', () => {
   });
 
   test('every internal link points at a real page and heading', () => {
-    const staticPaths = new Set(['/', '/about', '/tags', '/subscribe']);
+    const staticPaths = new Set(['/', '/about', '/tags', '/subscribe', '/posts/rss', '/posts/atom', '/posts/json']);
+    const tagPaths = getAllTags().map(({ name }) => `/t/${name}`);
     pageBodies.forEach((body) => {
       [...body.matchAll(/href="(\/[^"#]*)(?:#([^"]*))?"/g)].forEach(([, path, anchor]) => {
         const slug = path.slice(1);
-        expect(staticPaths.has(path) || getPostBySlug(slug) !== undefined).toBe(true);
+        expect(staticPaths.has(path) || tagPaths.includes(path) || getPostBySlug(slug) !== undefined).toBe(true);
         if (anchor) {
           expect(getPostBody(slug)).toContain(`id="${anchor}"`);
         }
