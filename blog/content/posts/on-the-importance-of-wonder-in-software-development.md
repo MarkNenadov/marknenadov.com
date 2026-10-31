@@ -19,7 +19,7 @@ Of course, “wonder” can also mean “awe”, and that has its own relevance 
 
 The world is filled with things to figure out, wonder-filled things, and enigmas wrapped in mysteries. Nurture your curiosity. Sure, curiosity killed the cat, but an incurious cat doesn’t get very far.
 
-As G.K. Chesterton once observed, though I suspect he had the awe side of the word more in mind:
+As G.K. Chesterton once observed, though he had the awe side of the word more in mind:
 
 > The world will never starve for want of wonders; but only for want of wonder.
 
