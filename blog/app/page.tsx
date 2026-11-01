@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { getAllPosts, getAllTags } from '@/lib/posts';
 import { SITE } from '@/lib/site';
@@ -9,17 +10,27 @@ export default function Home() {
   return (
     <div className="page-wide">
       <header className="border-b border-hairline pb-10 pt-12 md:pb-16 md:pt-24">
-        <h1 className="text-[clamp(3.25rem,14.5vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.045em] text-balance">
-          {SITE.name}
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-snug tracking-[-0.016em] text-ink-soft text-pretty md:mt-7 md:text-2xl">
-          {SITE.description}
-        </p>
-        <p className="meta-text mt-5 md:mt-7">By {SITE.author}</p>
-        <figure className="mt-8 max-w-xl md:mt-10">
-          <blockquote className="text-[0.9375rem] italic leading-relaxed text-ink-soft text-pretty">{SITE.epigraph.quote}</blockquote>
-          <figcaption className="meta-text mt-1.5">{SITE.epigraph.attribution}</figcaption>
-        </figure>
+        <div className="relative">
+          <h1 className="text-[clamp(3.25rem,14.5vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.045em] text-balance">
+            {SITE.name}
+          </h1>
+          <p className="mt-5 max-w-2xl text-lg leading-snug tracking-[-0.016em] text-ink-soft text-pretty md:mt-7 md:text-2xl">
+            {SITE.description}
+          </p>
+          <p className="meta-text mt-5 md:mt-7">By {SITE.author}</p>
+          <figure className="mt-8 max-w-xl md:mt-10">
+            <blockquote className="text-[0.9375rem] italic leading-relaxed text-ink-soft text-pretty">{SITE.epigraph.quote}</blockquote>
+            <figcaption className="meta-text mt-1.5">{SITE.epigraph.attribution}</figcaption>
+          </figure>
+          {/* Hidden until the content area is at full width; any narrower and it would collide with the title. */}
+          <Image
+            src="/images/wondering-willow.webp"
+            alt="A person reading under a willow tree, looking up at a firefly whose trail traces a question mark"
+            width={240}
+            height={240}
+            className="absolute right-0 top-1/2 hidden size-60 -translate-y-1/2 min-[68rem]:block"
+          />
+        </div>
       </header>
       <div className="grid lg:grid-cols-[minmax(0,1fr)_17rem] lg:gap-20">
         <PostList posts={getAllPosts()} />

@@ -8,4 +8,9 @@ describe('Home', () => {
     expect(markup).toMatch(/<blockquote[^>]*>The world will never starve for want of wonders; but only for want of wonder\.<\/blockquote>/);
     expect(markup).toMatch(/<figcaption[^>]*>G\.K\. Chesterton<\/figcaption>/);
   });
+
+  test('describes the hero illustration for screen readers', () => {
+    const markup = renderToStaticMarkup(<Home />);
+    expect(markup).toMatch(/<img[^>]*alt="A person reading under a willow tree, looking up at a firefly whose trail traces a question mark"/);
+  });
 });
